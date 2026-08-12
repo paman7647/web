@@ -805,7 +805,10 @@
         '<p class="overline mb-xs" style="color:var(--canopy);">MEMBERSHIP REGISTERED</p>' +
         '<h4 class="mb-xs" style="color:var(--canopy);">🎉 Welcome to Giving Circles, ' + name + '!</h4>' +
         '<p class="body-sm mb-md">Your registration has been confirmed for <strong>' + email + '</strong>. You will receive direct field updates from Malawi & Zambia.</p>' +
-        '<span class="tag tag-case">MEMBER ID: MLF-MEMBER-' + Math.floor(1000 + Math.random() * 9000) + '</span>' +
+        '<div style="display:flex; gap:var(--sp-sm); align-items:center; flex-wrap:wrap; margin-top:var(--sp-sm);">' +
+          '<span class="tag tag-case">MEMBER ID: MLF-MEMBER-' + Math.floor(1000 + Math.random() * 9000) + '</span>' +
+          '<button class="btn btn-earth" onclick="openDonationModal()" style="padding:8px 18px; font-size:0.8rem; background:var(--earth); border-color:var(--earth);">JOIN A CIRCLE / DONATE NOW ▶</button>' +
+        '</div>' +
       '</div>';
       window.showToast('Welcome ' + name + '! Membership confirmed.');
     }, 1000);

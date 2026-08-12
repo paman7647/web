@@ -12,7 +12,7 @@
     <link href="css/fonts.css" rel="stylesheet">
 
     <!-- Design System -->
-    <link rel="stylesheet" href="css/styles.css?v=20260813_v2">
+    <link rel="stylesheet" href="css/styles.css?v=20260813_v3">
 
     <meta property="og:title" content="MicroLoan Foundation — Women's Empowerment">
     <meta property="og:description" content="Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
@@ -759,19 +759,27 @@
 <!-- ═══════════════════════════════════════════════════════════
      NEWSLETTER SIGNUP (INJECTED)
      ═══════════════════════════════════════════════════════════ -->
-<section class="sec-pad container lazy-section" id="newsletter" aria-label="Newsletter Signup">
+<section class="sec-pad container lazy-section" id="newsletter" aria-label="Newsletter Signup & Giving Circle">
     <div class="grid" style="align-items:center; background:var(--ink); border-radius:12px; overflow:hidden;">
         <div class="col-5" style="padding:0;">
             <img src="media/happy_group.png" width="600" height="600" loading="lazy" decoding="async" alt="Happy group of entrepreneurs" style="width:100%; height:100%; aspect-ratio:1/1; object-fit:cover; display:block;">
         </div>
         <div class="col-7" style="padding:var(--sp-3xl);">
-            <h2 style="color:var(--cream); margin-bottom:var(--sp-md);">Let our entrepreneurs<br>inspire you.</h2>
-            <p style="color:var(--stone-light); margin-bottom:var(--sp-xl);">Sign up to our newsletter for the latest updates, success stories, and impact reports directly from the field.</p>
-            <form onsubmit="handleNewsletterSubmit(event)" style="display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
-                <input type="text" required placeholder="Full Name*" style="flex:1; min-width:180px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
-                <input type="email" required placeholder="Email Address*" style="flex:1; min-width:180px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
+            <div style="display:flex; gap:var(--sp-xs); margin-bottom:var(--sp-sm); flex-wrap:wrap;">
+                <span class="tag tag-rec">TAKE ACTION TODAY</span>
+                <span class="tag tag-case" style="border-color:var(--gold); color:var(--gold);">GIVING CIRCLE & NEWSLETTER</span>
+            </div>
+            <h2 style="color:var(--cream); margin-bottom:var(--sp-md);">Let our entrepreneurs<br>inspire & transform lives.</h2>
+            <p style="color:var(--stone-light); margin-bottom:var(--sp-xl);">Sign up for our field newsletter or join a giving circle to directly fund female entrepreneurs across Southern Africa.</p>
+            <form onsubmit="handleNewsletterSubmit(event)" style="display:flex; gap:var(--sp-sm); flex-wrap:wrap; margin-bottom:var(--sp-lg);">
+                <input type="text" required placeholder="Full Name*" style="flex:1; min-width:160px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
+                <input type="email" required placeholder="Email Address*" style="flex:1; min-width:160px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
                 <button type="submit" class="btn btn-fill" style="background:var(--gold); color:var(--ink); border:none; min-width:130px;">Sign Up</button>
             </form>
+            <div style="display:flex; align-items:center; gap:var(--sp-md); padding-top:var(--sp-md); border-top:1px solid rgba(255,255,255,0.15); flex-wrap:wrap;">
+                <span style="color:var(--stone-light); font-family:var(--mono); font-size:0.8rem;">READY TO MAKE AN IMPACT?</span>
+                <button class="btn btn-earth" onclick="openDonationModal()" style="padding:10px 24px; font-size:0.85rem; background:var(--earth); border-color:var(--earth);">JOIN A CIRCLE / DONATE NOW ▶</button>
+            </div>
         </div>
     </div>
 </section>
@@ -899,9 +907,9 @@
 <script src="js/vendor/three.min.js" defer></script>
 
 <!-- Application -->
-<script src="js/app.js?v=20260813_v2" defer></script>
-<script src="js/scene.js?v=20260813_v2" defer></script>
-<script src="js/animations.js?v=20260813_v2" defer></script>
+<script src="js/app.js?v=20260813_v3" defer></script>
+<script src="js/scene.js?v=20260813_v3" defer></script>
+<script src="js/animations.js?v=20260813_v3" defer></script>
 
 <!-- Boot -->
 <script>
