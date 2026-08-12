@@ -621,6 +621,7 @@
 
   /* ── EVIDENCE PANEL ───────────────────────────────────────── */
   window.openEvidence = function (key) {
+    if (key === 'clients') key = 'active';
     var d = EVIDENCE[key];
     if (!d) return;
     el('panelValue').textContent = d.value;
