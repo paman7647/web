@@ -70,19 +70,12 @@
     });
   }
 
-  function initNavProgress() {
+    function initNavProgress() {
     const sections = [
-      { id: 'humanModel', link: 'a[href="#humanModel"]' },
-      { id: 'fundingEngine', link: 'a[href="#humanModel"]' },
-      { id: 'timeline30m', link: 'a[href="#timeline30m"]' },
-      { id: 'joinCircles', link: 'a[href="#timeline30m"]' },
+      { id: 'ourWork', link: 'a[href="#ourWork"]' },
       { id: 'humanScale', link: 'a[href="#humanScale"]' },
-      { id: 'donorStrategy', link: 'a[href="#donorStrategy"]' },
-      { id: 'partnership', link: 'a[href="#donorStrategy"]' },
-      { id: 'riskMonitor', link: 'a[href="#donorStrategy"]' },
-      { id: 'scalability', link: 'a[href="#donorStrategy"]' },
-      { id: 'oneMillion', link: 'a[href="#donorStrategy"]' },
-      { id: 'recommendation', link: 'a[href="#donorStrategy"]' }
+      { id: 'successStories', link: 'a[href="#successStories"]' },
+      { id: 'newsletter', link: 'a[href="#newsletter"]' }
     ];
 
     const navLinks = document.querySelectorAll('.nav-link');
@@ -97,8 +90,8 @@
           onToggle: (self) => {
             if (self.isActive) {
               navLinks.forEach(link => link.classList.remove('active'));
-              const activeLink = document.querySelector(item.link);
-              if (activeLink) activeLink.classList.add('active');
+              const activeLinks = document.querySelectorAll(item.link);
+              activeLinks.forEach(l => l.classList.add('active'));
             }
           }
         });

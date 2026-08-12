@@ -39,13 +39,13 @@
         </a>
         <div class="nav-links">
             <a href="#ourWork" class="nav-link" style="text-decoration:none;">Our Work</a>
-            <a href="#takeAction" class="nav-link" style="text-decoration:none;">Take Action</a>
-            <a href="#jobs" class="nav-link" style="text-decoration:none;">Jobs</a>
-            <a href="#contact" class="nav-link" style="text-decoration:none;">Contact</a>
+            <a href="#humanScale" class="nav-link" style="text-decoration:none;">Impact</a>
+            <a href="#successStories" class="nav-link" style="text-decoration:none;">Stories</a>
+            <a href="#newsletter" class="nav-link" style="text-decoration:none;">Take Action</a>
+            <a href="#newsletter" class="nav-link" style="text-decoration:none;">Contact</a>
         </div>
         <div class="nav-actions">
-            <button class="nav-deck-btn" onclick="openDeck()" aria-label="Open presentation deck">DECK</button>
-            <button class="nav-btn-pill" onclick="window.location.hash='#joinCircles'" aria-label="Join a circle">Join a circle</button>
+            <button class="nav-btn-pill" onclick="window.location.hash='#newsletter'" aria-label="Join a circle">Join a circle</button>
             <button class="mobile-menu-toggle" aria-label="Toggle menu" style="background:none;border:none;padding:0.2rem;cursor:pointer;display:none;align-items:center;color:var(--ink);" onclick="document.querySelector('.mobile-overlay').classList.toggle('active')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
             </button>
@@ -54,10 +54,10 @@
 </nav>
 <div class="mobile-overlay" style="position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--cream);z-index:99;display:none;flex-direction:column;padding:var(--sp-xl);gap:var(--sp-lg);border-top:1px solid var(--border);">
     <a href="#ourWork" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Our Work</a>
-    <a href="#takeAction" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Take Action</a>
-    <a href="#jobs" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Jobs</a>
-    <a href="#contact" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Contact</a>
-    <button class="btn btn-outline" style="margin-top:auto;" onclick="openDeck()">View Deck</button>
+    <a href="#humanScale" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Impact</a>
+    <a href="#successStories" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Stories</a>
+    <a href="#newsletter" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Take Action</a>
+    <a href="#newsletter" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Contact</a>
 </div>
 <style>
 @media(max-width: 959px) {
@@ -114,7 +114,7 @@
 <!-- ═══════════════════════════════════════════════════════════
      01 — THE HUMAN MODEL
      ═══════════════════════════════════════════════════════════ -->
-<section class="sec-pad container lazy-section" id="humanModel" aria-label="How the model works">
+<section class="sec-pad container lazy-section" id="ourWork" aria-label="How the model works">
     <div class="sec-head">
         <span class="sec-num">01 / THE MODEL</span>
         <span class="tag tag-case">CASE-SOURCED</span>
@@ -997,93 +997,14 @@
             <div class="footer-brand">MICROLOAN IMPACTHUB — GMCC 2026 · Designed for Global Microfinance Case Competition</div>
             <div class="footer-links">
                 <a href="#hero">Overview</a>
-                <a href="#fundingEngine">Engine</a>
-                <a href="#donorStrategy">Pipeline</a>
-                <a href="#simulator">Simulator</a>
+                <a href="#ourWork">Our Work</a>
+                <a href="#humanScale">Impact</a>
+                <a href="#successStories">Stories</a>
+                <a href="#newsletter">Take Action</a>
             </div>
         </div>
     </div>
 </footer>
-
-<!-- ═══════════════════════════════════════════════════════════
-     EVIDENCE SIDE PANEL
-     ═══════════════════════════════════════════════════════════ -->
-<div class="side-panel" id="evidencePanel" role="dialog" aria-label="Evidence detail" aria-modal="true">
-    <div class="panel-close" onclick="closeEvidence()" tabindex="0" role="button" aria-label="Close">CLOSE ×</div>
-    <p class="overline mb-sm">EVIDENCE NOTE</p>
-    <h2 id="panelValue" class="mb-md" style="font-size:3rem">—</h2>
-    <h4 id="panelTitle" class="mb-lg">—</h4>
-
-    <p class="caption mb-xs">YEAR / PERIOD</p>
-    <p class="body-sm mb-lg" id="panelYear">—</p>
-
-    <p class="caption mb-xs">WHAT IT MEANS</p>
-    <p class="body-sm mb-lg" id="panelMeaning">—</p>
-
-    <p class="caption mb-xs">SOURCE</p>
-    <p class="body-sm mb-lg" id="panelSource">—</p>
-
-    <p class="caption mb-xs">DATA TYPE</p>
-    <p class="body-sm mb-lg" id="panelType">—</p>
-
-    <p class="caption mb-xs">LOCATION</p>
-    <p class="body-sm mb-lg" id="panelLocation">—</p>
-
-    <hr class="rule">
-    <p class="caption mb-xs">LIMITATIONS / CONTEXT</p>
-    <p class="body-sm" id="panelLimitations">—</p>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     DATA INTEGRITY MODAL
-     ═══════════════════════════════════════════════════════════ -->
-<div class="modal-bg" id="dataIntegrityModal" role="dialog" aria-label="Data integrity framework" aria-modal="true">
-    <div class="modal-content">
-        <div class="modal-close" onclick="closeDataIntegrity()" role="button" tabindex="0">CLOSE ×</div>
-        <p class="overline mb-lg">DATA INTEGRITY FRAMEWORK</p>
-        <h3 class="mb-xl">Ensuring Credibility<br>for GMCC Judges</h3>
-
-        <div style="padding:var(--sp-md);background:var(--canopy-soft);border:1px solid var(--canopy-light);margin-bottom:var(--sp-md)">
-            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:var(--canopy);margin-bottom:0.2rem">CASE-SOURCED</p>
-            <p class="body-sm">Directly from the GMCC 2026 MLF case booklet. $1.52M revenue, 84% UK/Europe, 99% repayment, 575,000 women, $166M+ disbursed.</p>
-        </div>
-        <div style="padding:var(--sp-md);background:var(--earth-glow);border:1px solid var(--earth-light);margin-bottom:var(--sp-md)">
-            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:var(--earth);margin-bottom:0.2rem">ILLUSTRATIVE MODEL</p>
-            <p class="body-sm">Strategic projections and scenario modeling built for the case presentation. Not official MLF targets.</p>
-        </div>
-        <div style="padding:var(--sp-md);background:var(--gold-glow);border:1px solid var(--gold);margin-bottom:var(--sp-md)">
-            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:#8B6D1E;margin-bottom:0.2rem">STRATEGIC RECOMMENDATION</p>
-            <p class="body-sm">Strategy recommendations for the GMCC case response. Not prescriptive commitments.</p>
-        </div>
-        <div style="padding:var(--sp-md);background:rgba(138,130,120,.04);border:1px solid var(--stone-light)">
-            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:var(--stone);margin-bottom:0.2rem">FICTIONAL PROTOTYPE</p>
-            <p class="body-sm">Fictional donor names and organisations for pipeline demonstration. Not real entities.</p>
-        </div>
-
-        <button class="btn btn-fill mt-xl" onclick="closeDataIntegrity()" style="width:100%;justify-content:center">Acknowledge & Close</button>
-    </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     PRESENTATION DECK
-     ═══════════════════════════════════════════════════════════ -->
-<div class="deck" id="deckOverlay" role="dialog" aria-label="Presentation deck" aria-modal="true">
-    <div class="deck-head">
-        <div style="display:flex;align-items:center;gap:0.5rem">
-            <span class="nav-dot"></span>
-            <span class="mono" style="font-size:0.6875rem">GMCC 2026 PRESENTATION</span>
-        </div>
-        <button class="nav-btn" onclick="closeDeck()">EXIT</button>
-    </div>
-    <div class="deck-body" id="deckSlideContent"></div>
-    <div class="deck-foot">
-        <span class="mono" style="font-size:0.6875rem;color:var(--stone)" id="deckCounter">Slide 1 of 5</span>
-        <div style="display:flex;gap:var(--sp-sm)">
-            <button class="btn btn-sm" onclick="prevSlide()">← PREV</button>
-            <button class="btn btn-fill btn-sm" onclick="nextSlide()">NEXT →</button>
-        </div>
-    </div>
-</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      SCRIPTS
