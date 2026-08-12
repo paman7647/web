@@ -724,22 +724,27 @@ input[type=number]{
   padding-top:calc(var(--nav-h) + var(--sp-xl));
 }
 .million-grid-container {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  min-height: 420px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--sp-lg);
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  min-height: auto;
 }
 .million-step {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .million-from{
   font-family:var(--mono);font-size:0.6875rem;

@@ -188,53 +188,75 @@
     const millionText1 = document.getElementById('millionText1');
     const millionText2 = document.getElementById('millionText2');
     const millionDetail = document.getElementById('millionDetail');
-    const millionPillars = document.getElementById('millionPillars');
 
     if (!millionNum) return;
 
     const step1 = document.getElementById('millionStep1');
     const step2 = document.getElementById('millionStep2');
 
-    // Force ALL elements visible immediately on load across all viewports
     if (step1) {
       step1.style.opacity = '1';
       step1.style.visibility = 'visible';
-      step1.style.display = 'flex';
+      step1.style.transform = 'translate(-50%, -50%) scale(1)';
     }
     if (step2) {
-      step2.style.opacity = '1';
+      step2.style.opacity = '0';
       step2.style.visibility = 'visible';
-      step2.style.display = 'block';
+      step2.style.transform = 'translate(-50%, -45%) scale(0.95)';
     }
-    if (millionText1) { millionText1.style.opacity = '1'; millionText1.textContent = 'ONE MILLION IS NOT A NUMBER.'; }
-    if (millionText2) { millionText2.style.opacity = '1'; millionText2.textContent = 'IT IS ONE MILLION OPPORTUNITIES.'; }
-    if (millionDetail) { millionDetail.style.opacity = '1'; millionDetail.textContent = 'One million businesses started. One million households secured. Four million children in school.'; }
-    if (millionPillars) { millionPillars.style.opacity = '1'; }
+
+    if (millionText1) millionText1.textContent = 'ONE MILLION IS NOT A NUMBER.';
+    if (millionText2) millionText2.textContent = 'IT IS ONE MILLION OPPORTUNITIES.';
+    if (millionDetail) millionDetail.textContent = 'One million businesses started. One million households secured. Four million children in school.';
 
     millionNum.textContent = '160,000';
-    if (millionFrom) millionFrom.textContent = 'FROM';
+    if (millionFrom) millionFrom.textContent = 'ANNUAL CLIENTS';
     if (millionContext) millionContext.textContent = 'WOMEN / YEAR';
 
     window.ScrollTrigger.create({
       trigger: wrap,
-      start: 'top 80%',
-      end: 'bottom 20%',
+      start: 'top top',
+      end: '+=800',
+      pin: isDesktop,
       scrub: 0.5,
       onUpdate: (self) => {
         const p = self.progress;
 
-        if (p < 0.5) {
-          const localP = p / 0.5;
+        if (p < 0.45) {
+          const localP = p / 0.45;
           const mappedVal = Math.floor(160000 + localP * (575000 - 160000));
-          millionNum.textContent = mappedVal.toLocaleString();
-          if (millionFrom) millionFrom.textContent = p < 0.1 ? 'FROM' : 'REACHED';
-          if (millionContext) millionContext.textContent = 'WOMEN IMPACTED';
-        } else {
-          const localP = (p - 0.5) / 0.5;
-          const mappedVal = Math.floor(575000 + localP * (1000000 - 575000));
-          millionNum.textContent = mappedVal.toLocaleString();
-          if (millionFrom) millionFrom.textContent = 'AMBITION';
-          if (millionContext) millionContext.textContent = 'WOMEN / YEAR BY 2035';
+          millionNum.textContent = mappedVal.toLocaleString() + (localP > 0.9 ? '+' : '');
+          if (millionFrom) millionFrom.textContent = localP < 0.1 ? 'ANNUAL CLIENTS' : 'REACHED TO DATE';
+          if (millionContext) millionContext.textContent = 'CUMULATIVE WOMEN IMPACTED';
+
+          if (step1) {
+            step1.style.opacity = '1';
+            step1.style.transform = 'translate(-50%, -50%) scale(' + (1 + localP * 0.05) + ')';
+          }
+          if (step2) {
+            step2.style.opacity = '0';
+            step2.style.transform = 'translate(-50%, -45%) scale(0.95)';
+          }
+        } 
+        else if (p < 0.55) {
+          const localP = (p - 0.45) / 0.1;
+          if (step1) {
+            step1.style.opacity = String(1 - localP);
+            step1.style.transform = 'translate(-50%, -55%) scale(' + (1.05 - localP * 0.1) + ')';
+          }
+          if (step2) {
+            step2.style.opacity = String(localP);
+            step2.style.transform = 'translate(-50%, ' + (-45 - localP * 5) + '%) scale(' + (0.95 + localP * 0.05) + ')';
+          }
+        } 
+        else {
+          if (step1) {
+            step1.style.opacity = '0';
+          }
+          if (step2) {
+            step2.style.opacity = '1';
+            step2.style.transform = 'translate(-50%, -50%) scale(1)';
+          }
         }
       }
     });
