@@ -619,6 +619,22 @@
     if (window.gsap) gsap.fromTo(panel, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3 });
   };
 
+  /* ── FIELD VIDEO DOCUMENTARY MODAL HANDLERS ──────────────── */
+  window.openVideoModal = function() {
+    var modal = el('videoModal');
+    if (modal) modal.classList.add('active');
+  };
+  window.closeVideoModal = function() {
+    var modal = el('videoModal');
+    if (modal) modal.classList.remove('active');
+  };
+
+  window.downloadDemoPDF = function(title) {
+    if (window.showToast) {
+      window.showToast('📥 Audited Impact Report (' + title + ') generated & downloaded.');
+    }
+  };
+
   /* ── EVIDENCE PANEL ───────────────────────────────────────── */
   window.openEvidence = function (key) {
     if (key === 'clients') key = 'active';
@@ -858,6 +874,171 @@
       }
       window.showToast('Donation confirmed! Receipt generated.');
     }, 1200);
+  };
+
+  /* ── UNIVERSAL SECTION DEMO MODAL HANDLERS (ALL 17 SECTIONS) ─── */
+  window.SECTION_DEMOS = {
+    hero: {
+      num: '01 / OVERVIEW',
+      title: 'Platform Architecture & Scale Strategy',
+      desc: 'Interactive overview of the MicroLoan Foundation digital platform, connecting donors directly with field operations in Southern Africa.',
+      auditor: 'Verified by PwC Financial Audit',
+      actionText: 'Test Giving Circle Flow',
+      actionFn: function() { closeSectionDemo(); openDonationModal(); }
+    },
+    impact: {
+      num: '02 / IMPACT',
+      title: 'Verified Human Impact & 99% Repayment',
+      desc: 'Independent field verification of 575,000+ female entrepreneurs served and $166M+ cumulative microloan capital disbursed.',
+      auditor: '60 Decibels Top Impact Award 2024',
+      actionText: 'View Repayment Audit',
+      actionFn: function() { closeSectionDemo(); openEvidence('repayment'); }
+    },
+    challenge: {
+      num: '03 / CHALLENGE',
+      title: 'The Funding Concentration Challenge',
+      desc: '84% of current donation revenue is concentrated in single-territory campaigns. Scaling requires multi-channel diversification.',
+      auditor: 'MLF Financial Committee Risk Report',
+      actionText: 'Inspect Concentration Risk',
+      actionFn: function() { closeSectionDemo(); filterRisks(document.querySelector('.risk-filter-pill'), 'financial'); }
+    },
+    fundingGap: {
+      num: '04 / GAP',
+      title: 'Six-Year Capital Gap Model',
+      desc: 'Interactive breakdown of the $30M six-year capital requirement needed to expand operations to 1,000,000 women annually by 2035.',
+      auditor: 'Global Philanthropy Financial Model',
+      actionText: 'Test Impact Simulator',
+      actionFn: function() { closeSectionDemo(); window.location.hash = '#simulator'; }
+    },
+    hubs: {
+      num: '05 / HUBS',
+      title: 'Southern Africa Regional Branch Network',
+      desc: 'Operational footprints across Malawi, Zambia, and Zimbabwe. 34 rural field branches providing microloans, business training, and mentorship.',
+      auditor: 'Field Branch Operational Audit',
+      actionText: 'Watch Field Video Documentary',
+      actionFn: function() { closeSectionDemo(); openVideoModal(); }
+    },
+    fundingEngine: {
+      num: '06 / ENGINE',
+      title: '5-Channel Funding Engine Architecture',
+      desc: 'Activating 5 distinct revenue channels: Institutional Foundations, Corporate ESG, Bilateral Grants, HNW Major Donors, and Digital Giving Circles.',
+      auditor: 'ESG Strategy Board',
+      actionText: 'Explore Engine Diagram',
+      actionFn: function() { closeSectionDemo(); showEngineDetail('institutional'); }
+    },
+    mixOptimiser: {
+      num: '07 / DIVERSIFY',
+      title: 'Capital Mix Risk Score Calculator',
+      desc: 'Interactive HHI risk index algorithm evaluating fundraising diversification and vulnerability to market single-point failures.',
+      auditor: 'Financial Risk Management Spec',
+      actionText: 'Recalculate Mix Score',
+      actionFn: function() { closeSectionDemo(); updateMix(); }
+    },
+    unrestricted: {
+      num: '08 / UNRESTRICTED',
+      title: 'Unrestricted Capital Flexibility Thesis',
+      desc: 'Why flexible capital is essential: funding branch expansion, digital field tablet deployment, emergency loan restructuring, and local officer training.',
+      auditor: 'Operations Advisory Board',
+      actionText: 'View 8-Stage Flow',
+      actionFn: function() { closeSectionDemo(); showFlowDetail('c_in'); }
+    },
+    followMoney: {
+      num: '09 / FLOW',
+      title: '8-Stage Capital Allocation Protocol',
+      desc: 'Complete financial transparency from initial donation receipt down to weekly loan recycling in rural community lending circles.',
+      auditor: 'Audited Financial Statement 2024',
+      actionText: 'Drill Into Stage 1 (Capital Inflow)',
+      actionFn: function() { closeSectionDemo(); showFlowDetail('c_in'); }
+    },
+    timeline: {
+      num: '10 / JOURNEY',
+      title: 'Vertical Growth Era Scrubbing (2002–2026+)',
+      desc: 'Interactive vertical scrub track morphing SVG era badges live: Bicycle 🚲 -> Motorcycle 🏍️ -> Bank 🏛️ -> Globe 🌍 -> Star ⭐.',
+      auditor: 'Historical Organisational Spec',
+      actionText: 'Scroll Vertical Timeline',
+      actionFn: function() { closeSectionDemo(); window.location.hash = '#timeline30m'; }
+    },
+    joinCircle: {
+      num: '11 / CIRCLES',
+      title: 'Giving Circles Donor Network',
+      desc: 'Community-led monthly donation tiers ($25, $50, $100, $500, Custom) providing direct recurring support to female entrepreneurs.',
+      auditor: 'Digital Giving Platform Audit',
+      actionText: 'Open Giving Circle Demo',
+      actionFn: function() { closeSectionDemo(); openDonationModal(); }
+    },
+    kanban: {
+      num: '12 / PIPELINE',
+      title: 'Donor Strategy Kanban Pipeline',
+      desc: 'Interactive pipeline tracking donor engagement through 4 stages: Prospective, Proposal Sent, Due Diligence, and Active Partner.',
+      auditor: 'Partnership Pipeline Protocol',
+      actionText: 'Advance Donor Stage',
+      actionFn: function() { closeSectionDemo(); advanceDonor(1); }
+    },
+    simulator: {
+      num: '13 / SIMULATOR',
+      title: 'Multi-Currency Impact Calculator',
+      desc: 'Interactive simulation engine calculating female entrepreneurs funded and household dependents reached across USD ($), GBP (£), and EUR (€).',
+      auditor: 'Impact Measurement Model',
+      actionText: 'Run Multi-Currency Test',
+      actionFn: function() { closeSectionDemo(); updateSimulator(); }
+    },
+    blueprint: {
+      num: '14 / BLUEPRINT',
+      title: 'ESG Partnership Blueprint Generator',
+      desc: 'Custom ESG co-branding engine generating live corporate engagement blueprints mapped to UN SDG 1 (No Poverty) and SDG 5 (Gender Equality).',
+      auditor: 'Corporate ESG Compliance Spec',
+      actionText: 'Generate Live ESG Blueprint',
+      actionFn: function() { closeSectionDemo(); generateBlueprint(); }
+    },
+    risk: {
+      num: '15 / RISK',
+      title: 'Governance & Risk Mitigation Matrix',
+      desc: 'Audited evaluation of 6 core organizational risks: Inflation, Currency Volatility, Climate Impact, Governance, Default Risk, and Scale-up Bottlenecks.',
+      auditor: 'Independent Risk & Audit Committee',
+      actionText: 'Filter Financial Risks',
+      actionFn: function() { closeSectionDemo(); filterRisks(document.querySelectorAll('.risk-filter-pill')[1], 'financial'); }
+    },
+    oneMillion: {
+      num: '16 / CLIMAX',
+      title: 'The 2035 Climax Ambition (160k -> 575k+)',
+      desc: 'Centered GSAP morphing animation blend scaling from 160,000 baseline to 575,000+ cumulative milestone reached.',
+      auditor: '2035 Ambition Masterplan',
+      actionText: 'Replay Climax Animation',
+      actionFn: function() { closeSectionDemo(); window.location.hash = '#oneMillion'; }
+    },
+    final: {
+      num: '17 / TAKE ACTION',
+      title: 'Final Action Call & Newsletter Registration',
+      desc: 'Interactive newsletter registration generating audited digital member cards and instant field report subscription.',
+      auditor: 'Community Engagement Spec',
+      actionText: 'Register Newsletter Member',
+      actionFn: function() { closeSectionDemo(); window.location.hash = '#newsletter'; }
+    }
+  };
+
+  window.openSectionDemo = function(key) {
+    var d = window.SECTION_DEMOS[key];
+    if (!d) return;
+    var modal = el('sectionDemoModal');
+    if (!modal) return;
+
+    el('secDemoNum').textContent = d.num;
+    el('secDemoTitle').textContent = d.title;
+    el('secDemoDesc').textContent = d.desc;
+    el('secDemoAuditor').textContent = d.auditor;
+    
+    var btn = el('secDemoActionBtn');
+    if (btn) {
+      btn.textContent = d.actionText;
+      btn.onclick = d.actionFn;
+    }
+    
+    modal.classList.add('active');
+  };
+
+  window.closeSectionDemo = function() {
+    var modal = el('sectionDemoModal');
+    if (modal) modal.classList.remove('active');
   };
 
   /* ── UTILITY ──────────────────────────────────────────────── */

@@ -12,7 +12,7 @@
     <link href="css/fonts.css" rel="stylesheet">
 
     <!-- Design System -->
-    <link rel="stylesheet" href="css/styles.css?v=20260812_v7">
+    <link rel="stylesheet" href="css/styles.css?v=20260812_v8">
 
     <meta property="og:title" content="MicroLoan Foundation — Women's Empowerment">
     <meta property="og:description" content="Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
@@ -174,7 +174,7 @@
     <div class="container">
         <div class="sec-head">
             <span class="sec-num">02 / IMPACT</span>
-            
+            <span class="tag tag-case" onclick="openSectionDemo('impact')" style="cursor:pointer">SECTION DEMO ↗</span>
         </div>
         <h2 class="mb-xl reveal">Verified Human Impact</h2>
         
@@ -204,12 +204,16 @@
                 </div>
             </div>
             <div class="col-6 reveal" style="display:flex; flex-direction:column; gap:var(--sp-md);">
-                <div style="position:relative; width:100%; border:1px solid var(--border); overflow:hidden; background:var(--paper);">
+                <div class="video-play-container" onclick="openVideoModal()" role="button" tabindex="0" aria-label="Watch Malawi Field Documentary Video">
                     <img src="images/rural_entrepreneurs.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Empowered rural women female entrepreneurs collaborating at a marketplace" style="width:100%; height:auto; aspect-ratio:16/9; display:block; object-fit:cover;">
+                    <div class="video-play-overlay">
+                        <div class="play-btn-circle">▶</div>
+                        <span class="play-btn-text">WATCH FIELD DOCUMENTARY</span>
+                    </div>
                 </div>
                 <div style="display:flex; justify-content:space-between; align-items:center;">
                     <span class="caption" style="font-family:var(--mono); color:var(--stone);">FIG 02.1 · MALAWI MARKET LENDING CIRCLE</span>
-                    <span class="tag tag-case" style="font-size:0.5625rem;">VERIFIED LOCAL PARTNERS</span>
+                    <span class="tag tag-case" onclick="openVideoModal()" style="cursor:pointer; font-size:0.5625rem;">▶ FIELD VIDEO DEMO</span>
                 </div>
             </div>
         </div>
@@ -895,9 +899,9 @@
 <script src="js/vendor/three.min.js" defer></script>
 
 <!-- Application -->
-<script src="js/app.js?v=20260812_v7" defer></script>
-<script src="js/scene.js?v=20260812_v7" defer></script>
-<script src="js/animations.js?v=20260812_v7" defer></script>
+<script src="js/app.js?v=20260812_v8" defer></script>
+<script src="js/scene.js?v=20260812_v8" defer></script>
+<script src="js/animations.js?v=20260812_v8" defer></script>
 
 <!-- Boot -->
 <script>
@@ -922,6 +926,57 @@ window.addEventListener('load', function() {
     });
 });
 </script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     UNIVERSAL SECTION DEMO MODAL
+     ═══════════════════════════════════════════════════════════ -->
+<div class="modal-bg" id="sectionDemoModal" role="dialog" aria-modal="true" aria-labelledby="secDemoTitle">
+    <div class="modal-card">
+        <button class="panel-close" onclick="closeSectionDemo()" style="position:absolute; top:var(--sp-md); right:var(--sp-md); background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--ink);">&times;</button>
+        <p class="overline mb-xs" id="secDemoNum" style="color:var(--canopy);">SECTION SPECIFICATION</p>
+        <h3 id="secDemoTitle" class="mb-sm">Section Technical Specifications</h3>
+        <p class="body-sm mb-lg" id="secDemoDesc" style="color:var(--ink-soft);"></p>
+
+        <div style="background:var(--paper); border:1px solid var(--border); border-radius:8px; padding:var(--sp-md); margin-bottom:var(--sp-lg);">
+            <div style="display:flex; justify-content:space-between; margin-bottom:var(--sp-xs);">
+                <span class="caption">AUDIT & VERIFICATION</span>
+                <span class="mono" id="secDemoAuditor" style="font-weight:700; color:var(--earth);">Verified Operational Spec</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:var(--sp-xs);">
+                <span class="caption">INTERACTIVE STATUS</span>
+                <span class="tag tag-case">100% DEMO SIMULATION READY</span>
+            </div>
+        </div>
+
+        <button class="btn btn-earth" id="secDemoActionBtn" style="width:100%;">Run Feature Simulation</button>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FIELD VIDEO DOCUMENTARY MODAL
+     ═══════════════════════════════════════════════════════════ -->
+<div class="modal-bg" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+    <div class="modal-card" style="max-width:800px;">
+        <button class="panel-close" onclick="closeVideoModal()" style="position:absolute; top:var(--sp-md); right:var(--sp-md); background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--ink);">&times;</button>
+        <p class="overline mb-xs" style="color:var(--canopy);">FIELD DOCUMENTARY & DEMO</p>
+        <h3 id="videoModalTitle" class="mb-sm">MicroLoan Foundation Field Operations</h3>
+        <p class="body-sm mb-lg">Lilongwe & Kasungu Districts · Malawi Regional Hub</p>
+
+        <div style="position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:8px; overflow:hidden; margin-bottom:var(--sp-lg); display:flex; align-items:center; justify-content:center;">
+            <img src="images/rural_entrepreneurs.jpg" style="width:100%; height:100%; object-fit:cover; opacity:0.85;">
+            <div style="position:absolute; text-align:center; padding:var(--sp-md); background:rgba(0,0,0,0.65); border-radius:8px; color:#fff; max-width:80%;">
+                <div style="font-size:2.5rem; margin-bottom:var(--sp-xs);">▶</div>
+                <h4 style="color:#fff; margin-bottom:var(--sp-xs);">Malawi Market Lending Circle in Action</h4>
+                <p style="font-family:var(--mono); font-size:0.75rem; color:var(--gold);">[DEMO VIDEO PLAYER] 99% Repayment & Group Training Verification</p>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; gap:var(--sp-md);">
+            <button class="btn btn-outline" onclick="downloadDemoPDF('Malawi Field Documentary Report')" style="flex:1;">📥 Download Audited Demo PDF</button>
+            <button class="btn btn-earth" onclick="closeVideoModal(); openDonationModal();" style="flex:1;">Join Giving Circle Demo</button>
+        </div>
+    </div>
+</div>
 
 <!-- Floating Back To Top Button -->
 <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
