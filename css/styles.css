@@ -1040,6 +1040,13 @@ html.js .reveal { opacity: 0; transform: translateY(24px); }
 .nav-btn-pill { transition: transform 0.2s ease, background 0.2s ease; }
 .nav-btn-pill:hover { transform: translateY(-1px); }
 
+/* --- ACCESSIBILITY & TOUCH TARGETS (WCAG 2.1) --- */
+.btn, .nav-btn-pill, input, select {
+  min-height: 44px;
+}
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.card-rounded { border-radius: 8px; overflow: hidden; }
+
 .kanban-col { transition: background 0.3s ease; }
 .kanban-col:hover { background: rgba(0,0,0,0.02); }
 
