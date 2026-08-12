@@ -724,19 +724,17 @@ input[type=number]{
   padding-top:calc(var(--nav-h) + var(--sp-xl));
 }
 .million-grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
+  gap: var(--sp-lg);
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  min-height: 350px;
+  min-height: auto;
 }
 .million-step {
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
   display: flex;
   flex-direction: column;
   align-items: center;
