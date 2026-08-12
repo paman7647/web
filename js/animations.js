@@ -72,7 +72,7 @@
 
     function initNavProgress() {
     const sections = [
-      { id: 'ourWork', link: 'a[href="#ourWork"]' },
+      { id: 'humanModel', link: 'a[href="#humanModel"]' },
       { id: 'humanScale', link: 'a[href="#humanScale"]' },
       { id: 'fundingEngine', link: 'a[href="#fundingEngine"]' },
       { id: 'simulator', link: 'a[href="#simulator"]' },
