@@ -763,10 +763,10 @@
         <div class="col-7" style="padding:var(--sp-3xl);">
             <h2 style="color:var(--cream); margin-bottom:var(--sp-md);">Let our entrepreneurs<br>inspire you.</h2>
             <p style="color:var(--stone-light); margin-bottom:var(--sp-xl);">Sign up to our newsletter for the latest updates, success stories, and impact reports directly from the field.</p>
-            <form onsubmit="event.preventDefault();" style="display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
-                <input type="text" placeholder="Full Name*" style="flex:1; min-width:200px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
-                <input type="email" placeholder="Email*" style="flex:1; min-width:200px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
-                <button type="button" class="btn btn-fill" style="background:var(--gold); color:var(--ink); border:none;">Sign Up</button>
+            <form onsubmit="handleNewsletterSubmit(event)" style="display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
+                <input type="text" required placeholder="Full Name*" style="flex:1; min-width:180px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
+                <input type="email" required placeholder="Email Address*" style="flex:1; min-width:180px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
+                <button type="submit" class="btn btn-fill" style="background:var(--gold); color:var(--ink); border:none; min-width:130px;">Sign Up</button>
             </form>
         </div>
     </div>
@@ -829,6 +829,21 @@
             <div class="tier-btn" onclick="selectDonationTier(this, '$50', 'Funds 2 Female Entrepreneurs & household financial literacy.')">$50 / Month</div>
             <div class="tier-btn" onclick="selectDonationTier(this, '$100', 'Funds a Full Community Circle of 5 Women.')">$100 / Month</div>
             <div class="tier-btn" onclick="selectDonationTier(this, '$500', 'Strategic Anchor Supporter — Funds 25 Women.')">$500 / Month</div>
+        </div>
+
+        <div style="margin-bottom:var(--sp-md);">
+            <p class="caption mb-xs">OR ENTER CUSTOM MONTHLY AMOUNT ($)</p>
+            <input type="number" placeholder="Custom amount (e.g. 75)" min="5" oninput="handleCustomDonation(this.value)" style="padding:0.6rem var(--sp-md); border:1px solid var(--border); border-radius:6px; width:100%; font-family:var(--mono);">
+        </div>
+
+        <div style="margin-bottom:var(--sp-md);">
+            <p class="caption mb-xs">SELECT TARGET REGION</p>
+            <select class="select-styled" id="donationRegionSelect" style="border-radius:6px;">
+                <option value="Malawi">Malawi Regional Operations</option>
+                <option value="Zambia">Zambia Rural Hubs</option>
+                <option value="Zimbabwe">Zimbabwe Growth Projects</option>
+                <option value="Pan-African">Pan-African Operations</option>
+            </select>
         </div>
 
         <div style="padding:var(--sp-md); background:var(--cream); border-radius:6px; margin-bottom:var(--sp-lg);">

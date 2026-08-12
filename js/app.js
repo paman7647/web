@@ -678,8 +678,10 @@
     var d = DONORS.find(function (x) { return x.id === id; });
     if (!d) return;
     var idx = STAGES.indexOf(d.stage);
-    d.stage = STAGES[(idx + 1) % STAGES.length];
+    var nextStage = STAGES[(idx + 1) % STAGES.length];
+    d.stage = nextStage;
     renderKanban();
+    if (window.showToast) window.showToast(d.name + ' advanced to ' + STAGE_LABELS[nextStage]);
   }
 
   /* ── PARTNERSHIP BLUEPRINT ────────────────────────────────── */
@@ -751,7 +753,49 @@
 
 
 
-  /* ── DONATION MODAL HANDLERS ──────────────────────────────── */
+  /* ── DEEP NEWSLETTER & DONATION SIMULATION HANDLERS ─────── */
+  window.showToast = function(msg) {
+    var toast = el('appToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'appToast';
+      toast.className = 'toast-notification';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = '<span>🎉</span> <span>' + msg + '</span>';
+    toast.classList.add('active');
+    setTimeout(function() { toast.classList.remove('active'); }, 3000);
+  };
+
+  window.handleNewsletterSubmit = function(e) {
+    if (e) e.preventDefault();
+    var form = e ? e.target : document.querySelector('#newsletter form');
+    if (!form) return;
+    
+    var nameInput = form.querySelector('input[type="text"]');
+    var emailInput = form.querySelector('input[type="email"]');
+    var btn = form.querySelector('button');
+    var name = (nameInput && nameInput.value) ? nameInput.value.trim() : 'Giving Partner';
+    var email = (emailInput && emailInput.value) ? emailInput.value.trim() : 'partner@microloan.org';
+
+    if (btn) {
+      btn.textContent = 'REGISTERING...';
+      btn.disabled = true;
+    }
+
+    setTimeout(function() {
+      form.innerHTML = '<div style="padding:var(--sp-lg); background:var(--canopy-soft); border:1px solid var(--canopy-light); border-radius:8px; text-align:left;">' +
+        '<p class="overline mb-xs" style="color:var(--canopy);">MEMBERSHIP REGISTERED</p>' +
+        '<h4 class="mb-xs" style="color:var(--canopy);">🎉 Welcome to Giving Circles, ' + name + '!</h4>' +
+        '<p class="body-sm mb-md">Your registration has been confirmed for <strong>' + email + '</strong>. You will receive direct field updates from Malawi & Zambia.</p>' +
+        '<span class="tag tag-case">MEMBER ID: MLF-MEMBER-' + Math.floor(1000 + Math.random() * 9000) + '</span>' +
+      '</div>';
+      window.showToast('Welcome ' + name + '! Membership confirmed.');
+    }, 1000);
+  };
+
+  window.selectedDonationAmount = '$25';
+
   window.openDonationModal = function() {
     var modal = el('donationModal');
     if (modal) modal.classList.add('active');
@@ -763,19 +807,47 @@
   window.selectDonationTier = function(btn, amount, impactText) {
     document.querySelectorAll('.tier-btn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
+    window.selectedDonationAmount = amount;
     var impactEl = el('donationImpactPreview');
     if (impactEl) impactEl.textContent = impactText;
   };
-  window.submitDonation = function() {
+  window.handleCustomDonation = function(val) {
+    if (!val || val <= 0) return;
+    window.selectedDonationAmount = '$' + val;
+    var women = Math.max(1, Math.round(val / 50));
     var impactEl = el('donationImpactPreview');
-    if (impactEl) {
-      impactEl.textContent = '🎉 Thank you! Your demo Giving Circle contribution has been confirmed.';
-      impactEl.style.color = 'var(--canopy)';
-      impactEl.style.fontWeight = '700';
+    if (impactEl) impactEl.textContent = 'Funds ' + women + ' Female Entrepreneur(s) per year with business training & seed loan.';
+  };
+  window.submitDonation = function() {
+    var regionEl = el('donationRegionSelect');
+    var region = regionEl ? regionEl.value : 'Malawi';
+    var btn = document.querySelector('#donationModal .btn-earth');
+    var card = document.querySelector('#donationModal .modal-card');
+
+    if (btn) {
+      btn.textContent = 'PROCESSING DEMO TRANSACTION...';
+      btn.disabled = true;
     }
+
     setTimeout(function() {
-      closeDonationModal();
-    }, 2200);
+      if (card) {
+        card.innerHTML = '<button class="panel-close" onclick="closeDonationModal()" style="position:absolute; top:var(--sp-md); right:var(--sp-md); background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--ink);">&times;</button>' +
+          '<div style="text-align:center; padding:var(--sp-md) 0;">' +
+            '<div style="width:60px; height:60px; border-radius:50%; background:var(--canopy-soft); color:var(--canopy); display:inline-flex; align-items:center; justify-content:center; font-size:2rem; margin-bottom:var(--sp-md);">✓</div>' +
+            '<p class="overline mb-xs" style="color:var(--canopy);">AUDITED DEMO RECEIPT</p>' +
+            '<h3 class="mb-sm">Giving Circle Contribution Confirmed</h3>' +
+            '<p class="body-sm mb-lg">Thank you for funding sustainable microfinance in Southern Africa.</p>' +
+            '<div style="background:var(--paper); border:1px dashed var(--border); padding:var(--sp-md); border-radius:8px; text-align:left; margin-bottom:var(--sp-lg);">' +
+              '<div style="display:flex; justify-content:space-between; margin-bottom:var(--sp-xs);"><span class="caption">TRANSACTION ID</span><span class="mono" style="font-weight:700">MLF-2026-' + Math.floor(10000 + Math.random() * 90000) + '</span></div>' +
+              '<div style="display:flex; justify-content:space-between; margin-bottom:var(--sp-xs);"><span class="caption">CONTRIBUTION TIER</span><span class="mono" style="font-weight:700; color:var(--earth)">' + window.selectedDonationAmount + ' / Month</span></div>' +
+              '<div style="display:flex; justify-content:space-between; margin-bottom:var(--sp-xs);"><span class="caption">TARGET REGION</span><span class="mono" style="font-weight:700; color:var(--canopy)">' + region + ' Hub</span></div>' +
+              '<div style="display:flex; justify-content:space-between;"><span class="caption">STATUS</span><span class="tag tag-case">VERIFIED DEMO</span></div>' +
+            '</div>' +
+            '<button class="btn btn-fill" onclick="closeDonationModal()" style="width:100%;">Done & Close</button>' +
+          '</div>';
+      }
+      window.showToast('Donation confirmed! Receipt generated.');
+    }, 1200);
   };
 
   /* ── UTILITY ──────────────────────────────────────────────── */
