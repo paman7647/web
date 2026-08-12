@@ -822,6 +822,21 @@
     if (modal) modal.classList.remove('active');
   };
 
+  window.scrollToNewsletter = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var target = el('newsletter');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      try { history.pushState(null, null, '#newsletter'); } catch(err){}
+    }
+  };
+
+  window.handleDonateClick = function(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (window.openDonationModal) window.openDonationModal();
+    window.scrollToNewsletter();
+  };
+
   window.openDonationModal = function() {
     var modal = el('donationModal');
     if (modal) modal.classList.add('active');
@@ -1012,7 +1027,7 @@
       desc: 'Interactive newsletter registration generating audited digital member cards and instant field report subscription.',
       auditor: 'Community Engagement Spec',
       actionText: 'Register Newsletter Member',
-      actionFn: function() { closeSectionDemo(); window.location.hash = '#newsletter'; }
+      actionFn: function() { closeSectionDemo(); window.scrollToNewsletter(); }
     }
   };
 
