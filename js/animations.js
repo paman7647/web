@@ -74,6 +74,9 @@
     const sections = [
       { id: 'ourWork', link: 'a[href="#ourWork"]' },
       { id: 'humanScale', link: 'a[href="#humanScale"]' },
+      { id: 'fundingEngine', link: 'a[href="#fundingEngine"]' },
+      { id: 'simulator', link: 'a[href="#simulator"]' },
+      { id: 'partnership', link: 'a[href="#partnership"]' },
       { id: 'successStories', link: 'a[href="#successStories"]' },
       { id: 'newsletter', link: 'a[href="#newsletter"]' }
     ];
