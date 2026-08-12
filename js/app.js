@@ -796,6 +796,15 @@
 
   window.selectedDonationAmount = '$25';
 
+  window.openMkondeImpact = function() {
+    var modal = el('mkondeModal');
+    if (modal) modal.classList.add('active');
+  };
+  window.closeMkondeImpact = function() {
+    var modal = el('mkondeModal');
+    if (modal) modal.classList.remove('active');
+  };
+
   window.openDonationModal = function() {
     var modal = el('donationModal');
     if (modal) modal.classList.add('active');
