@@ -12,7 +12,7 @@
     <link href="css/fonts.css" rel="stylesheet">
 
     <!-- Design System -->
-    <link rel="stylesheet" href="css/styles.css?v=20260813_v3">
+    <link rel="stylesheet" href="css/styles.css?v=20260813_v4">
 
     <meta property="og:title" content="MicroLoan Foundation — Women's Empowerment">
     <meta property="og:description" content="Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
@@ -45,7 +45,7 @@
             <a href="#newsletter" class="nav-link" style="text-decoration:none;" onclick="scrollToNewsletter(event)">Take Action</a>
         </div>
         <div class="nav-actions">
-            <button class="nav-btn-pill" onclick="handleDonateClick(event)" aria-label="Join a circle">Join a circle</button>
+            <button class="nav-btn-pill" onclick="openDonationModal()" aria-label="Join a circle">Join a circle</button>
             <button class="mobile-menu-toggle" aria-label="Toggle menu" style="background:none;border:none;padding:0.2rem;cursor:pointer;display:none;align-items:center;color:var(--ink);" onclick="document.querySelector('.mobile-overlay').classList.toggle('active')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
             </button>
@@ -521,7 +521,7 @@
         </div>
         
         <div class="reveal">
-            <button class="btn btn-fill" onclick="handleDonateClick(event)" style="font-size:1rem; padding: 16px 48px; background:var(--earth); border-color:var(--earth); text-transform:uppercase; letter-spacing:0.05em;">Donate Now</button>
+            <button class="btn btn-fill" onclick="scrollToNewsletter(event)" style="font-size:1rem; padding: 16px 48px; background:var(--earth); border-color:var(--earth); text-transform:uppercase; letter-spacing:0.05em;">Donate Now</button>
         </div>
     </div>
 </section>
@@ -907,9 +907,9 @@
 <script src="js/vendor/three.min.js" defer></script>
 
 <!-- Application -->
-<script src="js/app.js?v=20260813_v3" defer></script>
-<script src="js/scene.js?v=20260813_v3" defer></script>
-<script src="js/animations.js?v=20260813_v3" defer></script>
+<script src="js/app.js?v=20260813_v4" defer></script>
+<script src="js/scene.js?v=20260813_v4" defer></script>
+<script src="js/animations.js?v=20260813_v4" defer></script>
 
 <!-- Boot -->
 <script>
