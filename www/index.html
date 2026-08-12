@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>document.documentElement.classList.add('js');</script>
+    <meta name="description" content="MicroLoan ImpactHub — GMCC 2026 Philanthropic Strategy Experience. Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
+    <title>MICROLOAN IMPACTHUB — GMCC 2026</title>
+
+    <!-- Fonts -->
+    
+    
+    
+    <link href="css/fonts.css" rel="stylesheet">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <meta property="og:title" content="MICROLOAN IMPACTHUB — GMCC 2026">
+    <meta property="og:description" content="Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://microloan.org/impacthub">
+    <meta name="twitter:card" content="summary_large_image">
+
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+     ═══════════════════════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+        <a href="#hero" class="nav-brand" style="text-decoration:none; display:flex; align-items:center;">
+            <svg class="nav-logo-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E5A93B" stroke-width="2.5" stroke-linecap="round" style="margin-right: 8px; transform: rotate(-45deg);">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l.73-.73"/>
+            </svg>
+            <span class="nav-name" style="text-transform:lowercase; font-size:0.875rem; font-weight:600; letter-spacing:-0.02em; display:flex; align-items:center;">microloan&nbsp;<span style="font-weight:400; color:var(--ink-soft);">giving circles</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="#ourWork" class="nav-link" style="text-decoration:none;">Our Work</a>
+            <a href="#takeAction" class="nav-link" style="text-decoration:none;">Take Action</a>
+            <a href="#jobs" class="nav-link" style="text-decoration:none;">Jobs</a>
+            <a href="#contact" class="nav-link" style="text-decoration:none;">Contact</a>
+        </div>
+        <div class="nav-actions">
+            <button class="nav-deck-btn" onclick="openDeck()" aria-label="Open presentation deck">DECK</button>
+            <button class="nav-btn-pill" onclick="window.location.hash='#joinCircles'" aria-label="Join a circle">Join a circle</button>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" style="background:none;border:none;padding:0.2rem;cursor:pointer;display:none;align-items:center;color:var(--ink);" onclick="document.querySelector('.mobile-overlay').classList.toggle('active')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+<div class="mobile-overlay" style="position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--cream);z-index:99;display:none;flex-direction:column;padding:var(--sp-xl);gap:var(--sp-lg);border-top:1px solid var(--border);">
+    <a href="#ourWork" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Our Work</a>
+    <a href="#takeAction" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Take Action</a>
+    <a href="#jobs" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Jobs</a>
+    <a href="#contact" class="nav-link" style="font-size:1.5rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Contact</a>
+    <button class="btn btn-outline" style="margin-top:auto;" onclick="openDeck()">View Deck</button>
+</div>
+<style>
+@media(max-width: 959px) {
+    .mobile-menu-toggle { display: flex !important; }
+    .mobile-overlay.active { display: flex !important; }
+    .nav-actions .nav-deck-btn { display: none; }
+}
+</style>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     00 — HERO
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero container" id="hero" aria-label="Introduction">
+    <div class="grid">
+        <div class="col-7" style="display:flex;flex-direction:column;justify-content:center">
+            <p class="hero-meta">GMCC 2026 · MICROLOAN FOUNDATION · SOUTHERN AFRICA</p>
+            <h1 class="hero-headline">
+                JOIN OUR WOMEN'S<br>
+                <em>EMPOWERMENT</em><br>
+                MISSION.
+            </h1>
+            <p class="hero-sub">MicroLoan Foundation is entering a pivotal growth phase: scaling from 160,000 women reached annually toward 1 million women per year by 2035. This requires a diversified, measurable funding engine.</p>
+            <div class="hero-actions">
+                <a href="#fundingEngine" class="btn btn-fill">Explore the Funding Engine →</a>
+                <a href="#humanScale" class="btn">See the Impact</a>
+            </div>
+        </div>
+        <div class="col-5 hero-canvas-wrap" style="position:relative; display:flex; align-items:center; justify-content:center;">
+            <video autoplay muted loop playsinline style="width:100%; border-radius:8px;">
+                <source src="media/introopt.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <div class="stats-strip">
+        <div class="stat-item reveal">
+            <div class="stat-val">575,000+</div>
+            <div class="stat-label">Women and 2.4M dependents impacted</div>
+            <span class="tag tag-case">CASE-SOURCED · 2025</span>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-val">99%</div>
+            <div class="stat-label">Repayment rate across all regions</div>
+            <span class="tag tag-case">CASE-SOURCED · 2024</span>
+        </div>
+        <div class="stat-item reveal">
+            <div class="stat-val">1,000,000</div>
+            <div class="stat-label">Women reached annually by 2035</div>
+            <span class="tag tag-model">CASE AMBITION</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     01 — THE HUMAN MODEL
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="humanModel" aria-label="How the model works">
+    <div class="sec-head">
+        <span class="sec-num">01 / THE MODEL</span>
+        <span class="tag tag-case">CASE-SOURCED</span>
+    </div>
+    <div class="grid">
+        <div class="col-5 reveal">
+            <h2>HOW MICROLOAN<br>WORKS.</h2>
+            <p class="body-sm mt-xl">Small loans + business training + ongoing mentorship. Groups of five women create social collateral and mutual accountability — producing a 99% repayment rate without traditional collateral.</p>
+            <img src="media/hero_image.jpg" alt="Entrepreneur Visit" style="width:100%; border-radius:8px; margin-top:var(--sp-lg);">
+            <p class="caption mt-lg" style="font-style:italic">Beyond the Loan: Why lasting change takes more than access to finance.</p>
+        </div>
+        <div class="col-7 reveal">
+            <div class="model-step">
+                <span class="model-num">01</span>
+                <div>
+                    <h4 class="mb-xs">Group Formation</h4>
+                    <p class="body-sm">Five women self-select into a lending group. Social bonds create accountability stronger than any contract.</p>
+                </div>
+            </div>
+            <div class="model-step">
+                <span class="model-num">02</span>
+                <div>
+                    <h4 class="mb-xs">Financial Literacy Training</h4>
+                    <p class="body-sm">Business skills, accounting, pricing, and financial management — delivered in culturally relevant group settings.</p>
+                </div>
+            </div>
+            <div class="model-step">
+                <span class="model-num">03</span>
+                <div>
+                    <h4 class="mb-xs">Small Loan Disbursement</h4>
+                    <p class="body-sm">Graduated microloans with zero physical collateral. Group trust replaces traditional banking requirements.</p>
+                </div>
+            </div>
+            <div class="model-step">
+                <span class="model-num">04</span>
+                <div>
+                    <h4 class="mb-xs">Business Growth & Mentorship</h4>
+                    <p class="body-sm">Ongoing support as women start and grow enterprises — retail, agriculture, services. Regular mentorship visits continue.</p>
+                </div>
+            </div>
+            <div class="model-step">
+                <span class="model-num">05</span>
+                <div>
+                    <h4 class="mb-xs">Repayment & Reinvestment</h4>
+                    <p class="body-sm">99% of capital returns. Recycled into the next cycle. One dollar funds multiple women over time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     02 — THE HUMAN SCALE
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad lazy-section" id="humanScale" aria-label="Impact at scale">
+    <div class="container">
+        <div class="sec-head">
+            <span class="sec-num">02 / IMPACT</span>
+            <span class="tag tag-case">CASE-SOURCED</span>
+        </div>
+        <h2 class="mb-xl reveal">Verified Human Impact</h2>
+        
+        <div class="grid" style="align-items:center;">
+            <div class="col-6 reveal">
+                <div class="ev-grid">
+                    <div class="ev-card" onclick="openEvidence('repayment')" role="button" tabindex="0" aria-label="View repayment evidence">
+                        <div class="ev-card-label">Repayment Rate</div>
+                        <div class="ev-card-val c-canopy">99%</div>
+                        <span class="tag tag-case">2024 · CLICK FOR EVIDENCE</span>
+                    </div>
+                    <div class="ev-card" onclick="openEvidence('disbursed')" role="button" tabindex="0">
+                        <div class="ev-card-label">Disbursed to Date</div>
+                        <div class="ev-card-val c-earth">$166M+</div>
+                        <span class="tag tag-case">CUMULATIVE</span>
+                    </div>
+                    <div class="ev-card" onclick="openEvidence('women')" role="button" tabindex="0">
+                        <div class="ev-card-label">Women Served</div>
+                        <div class="ev-card-val c-indigo">575,000+</div>
+                        <span class="tag tag-case">2025</span>
+                    </div>
+                    <div class="ev-card" onclick="openEvidence('active')" role="button" tabindex="0">
+                        <div class="ev-card-label">Annual Active Clients</div>
+                        <div class="ev-card-val c-gold">160,000+</div>
+                        <span class="tag tag-case">2022</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 reveal" style="display:flex; flex-direction:column; gap:var(--sp-md);">
+                <div style="position:relative; width:100%; border:1px solid var(--border); overflow:hidden; background:var(--paper);">
+                    <img src="images/rural_entrepreneurs.jpg" loading="lazy" alt="Empowered rural women female entrepreneurs collaborating at a marketplace" style="width:100%; height:auto; aspect-ratio: 16/9; display:block; object-fit:cover;">
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption" style="font-family:var(--mono); color:var(--stone);">FIG 02.1 · MALAWI MARKET LENDING CIRCLE</span>
+                    <span class="tag tag-case" style="font-size:0.5625rem;">VERIFIED LOCAL PARTNERS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     03 — THE FUNDING CHALLENGE
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="fundingChallenge" aria-label="The funding challenge">
+    <div class="sec-head">
+        <span class="sec-num">03 / THE CHALLENGE</span>
+        <span class="tag tag-case">CASE-SOURCED · 2024</span>
+    </div>
+    <div class="grid">
+        <div class="col-7 reveal">
+            <h2>THE IMPACT<br>IS WORKING.</h2>
+            <h3 class="c-earth mt-lg">THE FUNDING MODEL<br>MUST SCALE WITH IT.</h3>
+            <p class="body-sm mt-xl">In 2024, MicroLoan Foundation generated $1.52M in donation income. 84% came from UK and Europe. This level of geographic concentration creates existential vulnerability — a single regional downturn could destabilise field operations across four African countries.</p>
+        </div>
+        <div class="col-5 reveal">
+            <div style="padding:var(--sp-xl);background:var(--paper);border:1px solid var(--border)">
+                <p class="overline mb-lg">2024 DONATION INCOME</p>
+                <div style="font-family:var(--serif);font-size:clamp(2.5rem,5vw,3.5rem);line-height:1;margin-bottom:var(--sp-xl)">$1.52M</div>
+
+                <div class="geo-bar">
+                    <div class="geo-bar-header"><span>UK + Europe</span><span style="font-weight:700;color:var(--earth)">84%</span></div>
+                    <div class="geo-bar-track"><div class="geo-bar-fill" style="width:84%;background:var(--earth)"></div></div>
+                </div>
+                <div class="geo-bar">
+                    <div class="geo-bar-header"><span>United States</span><span>10% ($152K)</span></div>
+                    <div class="geo-bar-track"><div class="geo-bar-fill" style="width:10%;background:var(--indigo)"></div></div>
+                </div>
+                <div class="geo-bar">
+                    <div class="geo-bar-header"><span>Australia</span><span>4% ($61K)</span></div>
+                    <div class="geo-bar-track"><div class="geo-bar-fill" style="width:4%;background:var(--canopy)"></div></div>
+                </div>
+
+                <hr class="rule rule-sm">
+                <div class="geo-bar">
+                    <div class="geo-bar-header"><span>Unrestricted</span><span style="color:var(--canopy)">70%</span></div>
+                    <div class="geo-bar-track"><div class="geo-bar-fill" style="width:70%;background:var(--canopy)"></div></div>
+                </div>
+                <div class="geo-bar">
+                    <div class="geo-bar-header"><span>Restricted</span><span style="color:var(--stone)">30%</span></div>
+                    <div class="geo-bar-track"><div class="geo-bar-fill" style="width:30%;background:var(--stone)"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     04 — THE FUNDING GAP
+     ═══════════════════════════════════════════════════════════ -->
+<section class="gap-wrap" id="fundingGap" aria-label="The funding gap">
+    <div class="gap-sticky">
+        <div class="container" style="position:absolute;top:var(--sp-xl);left:50%;transform:translateX(-50%);z-index:2;width:100%">
+            <div class="sec-head">
+                <span class="sec-num">04 / THE GAP</span>
+                <span class="tag tag-case">CASE-SOURCED</span>
+            </div>
+        </div>
+        <p class="gap-label" id="gapLabel">2024 BASELINE</p>
+        <div class="gap-number" id="gapNumber">$1.52M</div>
+        <p class="gap-context" id="gapContext">Current annual donation income. 84% from UK + Europe.</p>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     05 — CONCENTRATION / GEOGRAPHY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="concentration" aria-label="Geographic concentration">
+    <div class="sec-head">
+        <span class="sec-num">05 / CONCENTRATION</span>
+        <span class="tag tag-case">CASE-SOURCED</span>
+    </div>
+    <div class="grid">
+        <div class="col-5 reveal">
+            <div class="huge-num c-earth">84%</div>
+            <p class="overline mt-md mb-xl">UK + EUROPE · 2024 DONATION INCOME</p>
+            <p class="body-sm">Over-reliance on UK donors is a key risk. The future requires diversification across geographies, donor types, and funding modalities to protect field operations and enable the $30M ambition.</p>
+            <p class="caption mt-lg" style="font-style:italic">Source: MLF 2024 Financial Reporting</p>
+        </div>
+        <div class="col-7 reveal">
+            <div id="africaGlobe" role="img" aria-label="3D Globe showing operations in Africa">
+                <div class="globe-fallback" style="display:none;width:100%;height:100%;min-height:350px;align-items:center;justify-content:center;">
+                    <svg viewBox="0 0 400 350" width="100%" height="100%" style="max-height:380px" role="img" aria-label="Southern Africa Operating Hubs Vector Map">
+                        <path d="M 220 100 Q 180 140 170 170" fill="none" stroke="#2D5F3E" stroke-width="1.5" stroke-dasharray="3 3"/>
+                        <path d="M 170 170 Q 200 210 210 240" fill="none" stroke="#C9993A" stroke-width="1.5" stroke-dasharray="3 3"/>
+                        <path d="M 210 240 Q 190 280 180 300" fill="none" stroke="#1E2A4A" stroke-width="1.5" stroke-dasharray="3 3"/>
+                        <circle cx="220" cy="100" r="14" fill="#B85C38" fill-opacity="0.15" stroke="#B85C38" stroke-width="1.5"/>
+                        <circle cx="220" cy="100" r="5" fill="#B85C38"/>
+                        <text x="240" y="104" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#B85C38">MALAWI (92% School)</text>
+                        <circle cx="170" cy="170" r="14" fill="#2D5F3E" fill-opacity="0.15" stroke="#2D5F3E" stroke-width="1.5"/>
+                        <circle cx="170" cy="170" r="5" fill="#2D5F3E"/>
+                        <text x="35" y="174" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#2D5F3E">ZAMBIA (97% Resilience)</text>
+                        <circle cx="210" cy="240" r="14" fill="#C9993A" fill-opacity="0.15" stroke="#C9993A" stroke-width="1.5"/>
+                        <circle cx="210" cy="240" r="5" fill="#C9993A"/>
+                        <text x="230" y="244" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#C9993A">ZIMBABWE (Rural Focus)</text>
+                        <circle cx="180" cy="300" r="14" fill="#1E2A4A" fill-opacity="0.15" stroke="#1E2A4A" stroke-width="1.5"/>
+                        <circle cx="180" cy="300" r="5" fill="#1E2A4A"/>
+                        <text x="200" y="304" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#1E2A4A">SOUTH AFRICA (Regional)</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="country-grid">
+                <div class="country-card">
+                    <div class="country-name c-earth">Malawi</div>
+                    <p class="body-sm">Agriculture focus. 92% school attendance impact.</p>
+                </div>
+                <div class="country-card">
+                    <div class="country-name c-canopy">Zambia</div>
+                    <p class="body-sm">Retail growth. 97% economic resilience rate.</p>
+                </div>
+                <div class="country-card">
+                    <div class="country-name c-gold">Zimbabwe</div>
+                    <p class="body-sm">Rural entrepreneurship and resilience mentorship.</p>
+                </div>
+                <div class="country-card">
+                    <div class="country-name c-indigo">South Africa</div>
+                    <p class="body-sm">Regional coordination and corporate partnerships.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     06 — FUNDING ENGINE
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="fundingEngine" aria-label="The funding engine">
+    <div class="sec-head">
+        <span class="sec-num">06 / THE ENGINE</span>
+        <span class="tag tag-rec">STRATEGIC RECOMMENDATION</span>
+    </div>
+    <h2 class="mb-lg reveal">FIVE SOURCES.<br>ONE STRONGER ENGINE.</h2>
+    <p class="body-sm mb-xl reveal" style="max-width:560px">Moving from donor dependency to a diversified capital system. Each channel serves a distinct strategic role — together they create resilience.</p>
+
+    <div class="engine-svg reveal" id="engineDiagram" role="img" aria-label="Five-channel funding engine diagram"></div>
+
+    <div class="engine-panel" id="enginePanel">
+        <div class="grid">
+            <div class="col-6">
+                <p class="overline mb-sm">ACTIVE CHANNEL</p>
+                <h3 id="epTitle" class="mb-lg">—</h3>
+                <div class="mb-md">
+                    <p class="caption mb-xs">TARGET REVENUE RANGE</p>
+                    <p class="mono" style="font-size:1.3rem;font-weight:700" id="epRev">—</p>
+                </div>
+                <div>
+                    <p class="caption mb-xs">UNRESTRICTED RATIO</p>
+                    <p class="mono" style="font-size:1.3rem;font-weight:700" id="epRatio">—</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <p class="caption mb-sm">STRATEGIC FIT</p>
+                <p class="mono mb-lg" style="font-weight:600" id="epFit">—</p>
+                <p class="body-sm mb-lg" id="epDesc">—</p>
+                <p class="caption mb-xs">KEY RISK</p>
+                <p class="body-sm" id="epRisk">—</p>
+                <span class="tag tag-illustrative mt-lg" style="display:inline-flex">ILLUSTRATIVE MODEL</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     07 — FUNDING MIX OPTIMIZER
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="fundingMix" aria-label="Funding mix optimizer">
+    <div class="sec-head">
+        <span class="sec-num">07 / DIVERSIFY</span>
+        <span class="tag tag-illustrative">ILLUSTRATIVE STRATEGIC RECOMMENDATION</span>
+    </div>
+    <h2 class="mb-xl reveal">What would a healthier<br>funding mix look like?</h2>
+
+    <div class="grid">
+        <div class="col-7 reveal">
+            <div class="slider-group">
+                <div class="slider-header"><span>Institutional Foundations</span><span class="slider-val" id="valInst">35%</span></div>
+                <input type="range" id="mixInst" min="0" max="60" value="35" oninput="updateMix()">
+            </div>
+            <div class="slider-group">
+                <div class="slider-header"><span>Corporate CSR & ESG</span><span class="slider-val" id="valCorp">25%</span></div>
+                <input type="range" id="mixCorp" min="0" max="50" value="25" oninput="updateMix()">
+            </div>
+            <div class="slider-group">
+                <div class="slider-header"><span>Bilateral & DFI Grants</span><span class="slider-val" id="valDfi">15%</span></div>
+                <input type="range" id="mixDfi" min="0" max="40" value="15" oninput="updateMix()">
+            </div>
+            <div class="slider-group">
+                <div class="slider-header"><span>Private HNW Philanthropy</span><span class="slider-val" id="valHnw">15%</span></div>
+                <input type="range" id="mixHnw" min="0" max="40" value="15" oninput="updateMix()">
+            </div>
+            <div class="slider-group">
+                <div class="slider-header"><span>Digital Community Donors</span><span class="slider-val" id="valDig">10%</span></div>
+                <input type="range" id="mixDig" min="0" max="30" value="10" oninput="updateMix()">
+            </div>
+            <div class="mix-bar">
+                <div class="mix-seg" id="segInst" style="width:35%;background:var(--indigo)" data-label="INST"></div>
+                <div class="mix-seg" id="segCorp" style="width:25%;background:var(--canopy)" data-label="CORP"></div>
+                <div class="mix-seg" id="segDfi" style="width:15%;background:var(--gold)" data-label="DFI"></div>
+                <div class="mix-seg" id="segHnw" style="width:15%;background:var(--earth)" data-label="HNW"></div>
+                <div class="mix-seg" id="segDig" style="width:10%;background:var(--stone)" data-label="DIG"></div>
+            </div>
+        </div>
+        <div class="col-5 reveal">
+            <div class="output-panel">
+                <p class="overline mb-xl">SCENARIO OUTPUT</p>
+                <div class="out-metric">
+                    <p class="caption mb-xs">DIVERSIFICATION SCORE</p>
+                    <div class="out-val" id="scoreDiversification">88 / 100</div>
+                    <div class="geo-bar-track mt-sm"><div class="geo-bar-fill" id="barDiv" style="width:88%;background:var(--indigo)"></div></div>
+                </div>
+                <div class="out-metric">
+                    <p class="caption mb-xs">EST. UNRESTRICTED SHARE</p>
+                    <div class="out-val c-earth" id="scoreUnrestricted">68%</div>
+                    <div class="geo-bar-track mt-sm"><div class="geo-bar-fill" id="barUnres" style="width:68%;background:var(--earth)"></div></div>
+                </div>
+                <div class="out-metric">
+                    <p class="caption mb-xs">EST. FUNDRAISING EXPENSE</p>
+                    <div class="out-val c-canopy" id="scoreCost">12.5%</div>
+                    <div class="geo-bar-track mt-sm"><div class="geo-bar-fill" id="barCost" style="width:50%;background:var(--canopy)"></div></div>
+                </div>
+                <hr class="rule rule-sm">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <span class="caption">Not an official MLF target</span>
+                    <span class="tag tag-illustrative">ILLUSTRATIVE</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     08 — UNRESTRICTED CAPITAL
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="unrestricted" aria-label="Unrestricted funding">
+    <div class="sec-head">
+        <span class="sec-num">08 / FLEXIBILITY</span>
+        <span class="tag tag-case">70% UNRESTRICTED · 2024</span>
+    </div>
+    <h2 class="mb-lg reveal">FLEXIBLE CAPITAL<br>MATTERS.</h2>
+    <p class="body-sm mb-xl reveal" style="max-width:500px">70% of 2024 income was unrestricted — meaning MLF could direct it to where it was most needed. As funding scales, protecting this flexibility is critical.</p>
+    <div class="ur-compare reveal">
+        <div class="ur-col">
+            <div class="ur-col-head c-stone">RESTRICTED FUNDS</div>
+            <div class="ur-item">Tied to specific projects or regions</div>
+            <div class="ur-item">Cannot fund core operations</div>
+            <div class="ur-item">Reporting burden on each grant</div>
+            <div class="ur-item">Cannot respond to emergencies</div>
+            <div class="ur-item">Cannot invest in digital systems</div>
+        </div>
+        <div class="ur-col" style="background:var(--canopy-soft)">
+            <div class="ur-col-head c-canopy">UNRESTRICTED FUNDS</div>
+            <div class="ur-item">Fund loan officers and field staff</div>
+            <div class="ur-item">Build digital tools and infrastructure</div>
+            <div class="ur-item">Support operational systems</div>
+            <div class="ur-item">Respond to changing needs</div>
+            <div class="ur-item">Invest in capacity building</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     09 — FOLLOW THE MONEY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="followMoney" aria-label="Follow the money">
+    <div class="sec-head">
+        <span class="sec-num">09 / FOLLOW THE MONEY</span>
+        <span class="tag tag-model">ILLUSTRATIVE MODEL</span>
+    </div>
+    <h2 class="mb-md reveal">From Capital to Community</h2>
+    <div class="reveal" style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);color:var(--earth);margin-bottom:var(--sp-xl)">$500,000</div>
+
+    <div class="flow-wrap reveal">
+        <div class="flow-line"></div>
+        <div class="flow-stage" onclick="selectFlowStage(1)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">01</div>
+            <div class="flow-name">Capital</div>
+            <p class="flow-desc">Funds enter the trust.</p>
+        </div>
+        <div class="flow-stage" onclick="selectFlowStage(2)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">02</div>
+            <div class="flow-name">Loan Officers</div>
+            <p class="flow-desc">Deployed to communities.</p>
+        </div>
+        <div class="flow-stage" onclick="selectFlowStage(3)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">03</div>
+            <div class="flow-name">Groups of Five</div>
+            <p class="flow-desc">Women form circles.</p>
+        </div>
+        <div class="flow-stage" onclick="selectFlowStage(4)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">04</div>
+            <div class="flow-name">Training</div>
+            <p class="flow-desc">Financial literacy delivered.</p>
+        </div>
+        <div class="flow-stage" onclick="selectFlowStage(5)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">05</div>
+            <div class="flow-name">Business</div>
+            <p class="flow-desc">Loans disbursed. 99% repaid.</p>
+        </div>
+        <div class="flow-stage" onclick="selectFlowStage(6)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">06</div>
+            <div class="flow-name">Growth</div>
+            <p class="flow-desc">Enterprises expand.</p>
+        </div>
+        <div class="flow-stage" onclick="selectFlowStage(7)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">07</div>
+            <div class="flow-name">Household</div>
+            <p class="flow-desc">Stability achieved.</p>
+        </div>
+        <div class="flow-stage" onclick="selectFlowStage(8)">
+            <div class="flow-dot"></div>
+            <div class="flow-num">08</div>
+            <div class="flow-name">Recycled</div>
+            <p class="flow-desc">Capital funds more women.</p>
+        </div>
+    </div>
+    <div class="engine-panel" id="flowDetail" style="display:none"><div id="flowDetailContent"></div></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     10 — THE JOURNEY (TIMELINE)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="timeline30m" aria-label="Giving circles timeline">
+    <div class="sec-head">
+        <span class="sec-num">10 / THE JOURNEY</span>
+        <span class="tag tag-illustrative">MLF TIMELINE</span>
+    </div>
+    
+    <div style="text-align:center; margin-bottom:var(--sp-3xl);">
+        <h2 class="reveal" style="font-size:clamp(1.8rem, 4vw, 3rem); line-height:1.2; margin-bottom:var(--sp-md);">
+            One bicycle became a movement.<br>
+            Your circle is the next leg.
+        </h2>
+        <p class="body-lg reveal c-stone" style="max-width:600px; margin:0 auto;">
+            MLF's own growth story — reused as the platform's timeline, not an invented one.
+        </p>
+    </div>
+
+    <div class="timeline reveal">
+        <div class="timeline-year">
+            <div class="timeline-dot"></div>
+            <div class="timeline-label">2002</div>
+            <h3 class="timeline-title">One bicycle</h3>
+            <p class="body-sm c-stone">One loan officer, one branch, Malawi.</p>
+        </div>
+        <div class="timeline-year">
+            <div class="timeline-dot"></div>
+            <div class="timeline-label">2008</div>
+            <h3 class="timeline-title">Motorcycles</h3>
+            <p class="body-sm c-stone">Expansion into Zambia and reach into rural terrain.</p>
+        </div>
+        <div class="timeline-year">
+            <div class="timeline-dot"></div>
+            <div class="timeline-label">2023</div>
+            <h3 class="timeline-title">Self-sufficiency</h3>
+            <p class="body-sm c-stone">All three countries reach operational self-sufficiency.</p>
+        </div>
+        <div class="timeline-year">
+            <div class="timeline-dot"></div>
+            <div class="timeline-label">2025</div>
+            <h3 class="timeline-title">South Africa</h3>
+            <p class="body-sm c-stone">575,000 women and 2.4M dependents reached.</p>
+        </div>
+        <div class="timeline-year">
+            <div class="timeline-dot highlight"></div>
+            <div class="timeline-label">2026 →</div>
+            <h3 class="timeline-title" style="color:var(--canopy)">Giving circles</h3>
+            <p class="body-sm c-stone">Donor-side infrastructure to fund the next million.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     10b — JOIN A CIRCLE
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="joinCircles" aria-label="Join a circle">
+    <div style="text-align:center; margin-bottom:var(--sp-2xl);">
+        <h2 class="reveal" style="font-size:clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom:var(--sp-md);">Fund the next generation</h2>
+        <p class="body-lg reveal c-stone" style="max-width:600px; margin:0 auto; margin-bottom:var(--sp-lg);">
+            Join the circle and help us hit $3M in year one, drastically reducing fundraising costs.
+        </p>
+        <div class="reveal" style="display:flex; justify-content:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:var(--sp-2xl);">
+            <span class="tag tag-rec">YEAR 1 GOAL: $3M</span>
+            <span class="tag tag-case" style="border-color:var(--canopy-light); color:var(--canopy); background:var(--canopy-soft);">COST REDUCTION: 30% → 12.5%</span>
+        </div>
+        
+        <div class="reveal">
+            <button class="btn btn-fill" onclick="openDeck()" style="font-size:1rem; padding: 16px 48px; background:var(--earth); border-color:var(--earth); text-transform:uppercase; letter-spacing:0.05em;">Donate Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     11 — DONOR STRATEGY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="donorStrategy" aria-label="Donor strategy">
+    <div class="sec-head">
+        <span class="sec-num">11 / DONORS</span>
+        <span class="tag tag-fictional">FICTIONAL PROTOTYPE DATA</span>
+    </div>
+    <h2 class="mb-md reveal">FROM DONORS<br>TO PARTNERS.</h2>
+    <h4 class="c-stone mb-xl reveal">Don't ask who can fund us. Ask who should partner with us.</h4>
+
+    <div class="kanban reveal" id="kanbanBoard">
+        <!-- Populated by JS -->
+    </div>
+    <p class="caption mt-lg reveal">Click any card to advance it through the pipeline. All organisations are fictional prototypes for demonstration.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     12 — IMPACT SIMULATOR
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="simulator" aria-label="Impact simulator">
+    <div class="sec-head">
+        <span class="sec-num">12 / SIMULATOR</span>
+        <span class="tag tag-model">ILLUSTRATIVE ASSUMPTION</span>
+    </div>
+    <h2 class="mb-xl reveal">WHAT COULD YOUR<br>FUNDING UNLOCK?</h2>
+
+    <div class="grid">
+        <div class="col-6 reveal">
+            <p class="caption mb-md">CAPITAL INPUT</p>
+            <input type="range" id="simSlider" min="10000" max="1000000" step="10000" value="100000" oninput="updateSimulator()">
+            <div style="display:flex;justify-content:space-between;margin-top:0.3rem">
+                <span class="caption">$10K</span><span class="caption">$500K</span><span class="caption">$1M</span>
+            </div>
+            <div style="font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.5rem);color:var(--earth);margin-top:var(--sp-lg)" id="simCapDisplay">$100,000</div>
+
+            <button class="btn btn-sm mt-xl" onclick="toggleAssumptionLab()">Assumption Lab</button>
+            <div id="assumptionLab" style="display:none;margin-top:var(--sp-lg);padding:var(--sp-lg);background:var(--paper);border:1px solid var(--border)">
+                <p class="caption mb-sm">COST PER CLIENT ($)</p>
+                <input type="number" id="simCost" value="50" oninput="updateSimulator()">
+                <p class="caption mb-sm mt-md">DEPENDENTS PER HOUSEHOLD</p>
+                <input type="number" id="simDep" value="4.2" step="0.1" oninput="updateSimulator()">
+                <span class="tag tag-model mt-md" style="display:inline-flex">ILLUSTRATIVE ASSUMPTIONS</span>
+            </div>
+        </div>
+        <div class="col-6 reveal">
+            <div class="sim-output">
+                <div class="sim-result">
+                    <p class="caption mb-xs">FEMALE ENTREPRENEURS SERVED</p>
+                    <div class="sim-val c-earth" id="simWomen">2,000</div>
+                </div>
+                <div class="sim-result">
+                    <p class="caption mb-xs">DEPENDENTS IMPACTED</p>
+                    <div class="sim-val c-canopy" id="simDependents">8,400</div>
+                </div>
+                <div class="sim-result">
+                    <p class="caption mb-xs">CHILDREN IN SCHOOL (EST. 92%)</p>
+                    <div class="sim-val" id="simSchool">~7,728</div>
+                </div>
+                <div class="sim-result">
+                    <p class="caption mb-xs">CAPITAL RECYCLING RATE</p>
+                    <div class="sim-val c-gold">99%</div>
+                    <span class="tag tag-case mt-xs" style="display:inline-flex">CASE-SOURCED</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     13 — CORPORATE PARTNERSHIP
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="partnership" aria-label="Corporate partnership">
+    <div class="sec-head">
+        <span class="sec-num">13 / PARTNERSHIP</span>
+        <span class="tag tag-illustrative">PROTOTYPE</span>
+    </div>
+    <h2 class="mb-xl reveal">PARTNERSHIP,<br>NOT SPONSORSHIP.</h2>
+
+    <div class="grid">
+        <div class="col-6 reveal">
+            <select class="select-styled" id="partnerObjective">
+                <option value="SDG 5: Gender Equality">ESG: SDG 5 — Gender Equality & Empowerment</option>
+                <option value="SDG 1: Eradicating Poverty">ESG: SDG 1 — Eradicating Poverty</option>
+                <option value="SDG 8: Decent Work">ESG: SDG 8 — Decent Work & Economic Growth</option>
+            </select>
+            <select class="select-styled" id="partnerCountry">
+                <option value="Malawi">Target Region: Malawi (Agriculture Focus)</option>
+                <option value="Zambia">Target Region: Zambia (Retail Growth)</option>
+                <option value="Zimbabwe">Target Region: Zimbabwe (Resilience)</option>
+                <option value="Pan-African">Target Region: Pan-African Operations</option>
+            </select>
+            <select class="select-styled" id="partnerCommitment">
+                <option value="$50,000 / Year">$50,000 / Year (1,000 Women)</option>
+                <option value="$150,000 / Year">$150,000 / Year (3,000 Women)</option>
+                <option value="$500,000 / Year">$500,000 / Year — Strategic Anchor</option>
+            </select>
+            <button class="btn btn-fill mt-md" onclick="generateBlueprint()">Generate Partnership Blueprint</button>
+        </div>
+        <div class="col-6 reveal">
+            <div class="blueprint" id="blueprintDoc">
+                <p class="caption" style="text-align:center;margin-bottom:var(--sp-lg)">STRATEGIC PARTNERSHIP BLUEPRINT</p>
+                <h4 style="text-align:center;margin-bottom:var(--sp-lg)" id="bpTitle">—</h4>
+                <p class="body-sm mb-lg" id="bpDesc">—</p>
+                <hr class="rule rule-sm">
+                <div style="display:flex;justify-content:space-between">
+                    <span class="caption">COMMITMENT</span>
+                    <span class="mono" style="font-size:0.8125rem;font-weight:700" id="bpCommit">—</span>
+                </div>
+                <hr class="rule rule-sm">
+                <p class="body-sm">Includes quarterly SDG impact reporting, employee engagement programmes, and full client audit verification.</p>
+                <span class="tag tag-illustrative mt-lg" style="display:inline-flex">GENERATED PROTOTYPE</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     14 — RISK & RESILIENCE
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="riskMonitor" aria-label="Risk and resilience">
+    <div class="sec-head">
+        <span class="sec-num">14 / RISK</span>
+    </div>
+    <h2 class="mb-xl reveal">Governance & Resilience</h2>
+
+    <div class="risk-grid reveal">
+        <div class="risk-card moderate">
+            <div class="risk-level c-gold">MODERATE</div>
+            <h4 class="mb-sm">Donor Concentration</h4>
+            <p class="body-sm mb-md">84% of income from UK/EU. High exposure to single-region economic shifts.</p>
+            <p class="caption">MITIGATION: US & Australia expansion, 5-source engine.</p>
+        </div>
+        <div class="risk-card low">
+            <div class="risk-level c-canopy">LOW</div>
+            <h4 class="mb-sm">Mission Drift</h4>
+            <p class="body-sm mb-md">Risk of shifting focus from lowest-income women during rapid scaling.</p>
+            <p class="caption">MITIGATION: Group selection criteria & PPI poverty audits.</p>
+        </div>
+        <div class="risk-card low">
+            <div class="risk-level c-canopy">LOW</div>
+            <h4 class="mb-sm">Fundraising Cost</h4>
+            <p class="body-sm mb-md">Initial expense during growth phase may exceed operational guidelines.</p>
+            <p class="caption">MITIGATION: ~$500K Year 1 cap, targeting 10–15% at maturity.</p>
+        </div>
+        <div class="risk-card moderate">
+            <div class="risk-level c-gold">MODERATE</div>
+            <h4 class="mb-sm">Operational Scalability</h4>
+            <p class="body-sm mb-md">Maintaining 99% repayment with rapid client growth across four countries.</p>
+            <p class="caption">MITIGATION: Digital loan tracking, regional capacity building.</p>
+        </div>
+        <div class="risk-card moderate">
+            <div class="risk-level c-gold">MODERATE</div>
+            <h4 class="mb-sm">Funding Competition</h4>
+            <p class="body-sm mb-md">Growing competition for philanthropic capital in the global development sector.</p>
+            <p class="caption">MITIGATION: Impact evidence differentiation, 99% repayment proof.</p>
+        </div>
+        <div class="risk-card low">
+            <div class="risk-level c-canopy">LOW</div>
+            <h4 class="mb-sm">Restricted/Unrestricted Tension</h4>
+            <p class="body-sm mb-md">New institutional grants may increase restricted funding proportion.</p>
+            <p class="caption">MITIGATION: Prioritise unrestricted sources (HNW, digital).</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     15 — OPERATIONAL SCALABILITY
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="scalability" aria-label="Operational scalability">
+    <div class="sec-head">
+        <span class="sec-num">15 / SCALE</span>
+    </div>
+    <h2 class="mb-lg reveal">CAN THE<br>ORGANISATION SCALE?</h2>
+    <p class="body-sm mb-xl reveal" style="max-width:500px">Funding growth must be matched by operational capacity. The $30M ambition requires coordinated expansion across people, systems, and field infrastructure.</p>
+
+    <div class="scale-flow reveal">
+        <div class="scale-node" style="border-color:var(--earth)">FUNDING</div>
+        <span class="scale-arrow">→</span>
+        <div class="scale-node" style="border-color:var(--indigo)">PEOPLE</div>
+        <span class="scale-arrow">→</span>
+        <div class="scale-node" style="border-color:var(--canopy)">LOAN OFFICERS</div>
+        <span class="scale-arrow">→</span>
+        <div class="scale-node" style="border-color:var(--gold)">DIGITAL SYSTEMS</div>
+        <span class="scale-arrow">→</span>
+        <div class="scale-node" style="border-color:var(--stone)">TRAINING</div>
+        <span class="scale-arrow">→</span>
+        <div class="scale-node" style="border-color:var(--canopy)">COMMUNITIES</div>
+        <span class="scale-arrow">→</span>
+        <div class="scale-node" style="border-color:var(--earth);font-weight:700">WOMEN REACHED</div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     16 — ONE MILLION (CLIMAX — REDESIGNED)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="million-wrap" id="oneMillion" aria-label="One million women">
+    <div class="million-sticky">
+        <div class="container" style="position:absolute;top:var(--sp-xl);left:50%;transform:translateX(-50%);z-index:2;width:100%">
+            <div class="sec-head">
+                <span class="sec-num">16 / ONE MILLION</span>
+                <span class="tag tag-model">CASE AMBITION</span>
+            </div>
+        </div>
+
+        <div class="million-grid-container">
+            <!-- STEP 1: Growing Counter -->
+            <div class="million-step" id="millionStep1">
+                <p class="million-from" id="millionFrom">FROM</p>
+                <div class="million-num" id="millionNum">160,000</div>
+                <p class="million-context" id="millionContext">WOMEN / YEAR</p>
+            </div>
+
+            <!-- STEP 2: Thesis & Community Pillars -->
+            <div class="million-step" id="millionStep2" style="opacity:0; visibility:hidden;">
+                <div class="million-text" id="millionText1">ONE MILLION IS NOT A NUMBER.</div>
+                <div class="million-text" id="millionText2" style="color:var(--earth)">IT IS ONE MILLION OPPORTUNITIES.</div>
+                <p class="million-detail" id="millionDetail">One million businesses started. One million households secured. Four million children in school.</p>
+                <div class="million-pillars" id="millionPillars">
+                    <div class="million-pill">Funding</div>
+                    <div class="million-pill">People</div>
+                    <div class="million-pill">Systems</div>
+                    <div class="million-pill">Digital Tools</div>
+                    <div class="million-pill">Local Capacity</div>
+                    <div class="million-pill">Resilience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SUCCESS STORIES (INJECTED)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="successStories" aria-label="Success Stories">
+    <div class="sec-head">
+        <span class="sec-num">SUCCESS STORIES</span>
+        <span class="tag tag-case">MALAWI</span>
+    </div>
+    <div class="grid">
+        <div class="col-6 reveal">
+            <h2>MRS ALIFOSINA<br>MKONDE.</h2>
+            <p class="body-sm mt-xl">Mrs Alifosina Mkonde is the proud mother of eight children, and lives in the outskirts of Lilongwe, Malawi. 11 years ago, she set up a small grocery stall selling rice, groundnuts and maize to support her family.</p>
+            <p class="body-sm mt-md">She dreamed that her children would get the education she never had. In reality, the family lived in extreme poverty and often went for weeks without food. Imagine the heartache of putting your children to bed hungry.</p>
+            <p class="body-sm mt-md">Determined to make a change, Mrs Mkonde joined a MicroLoan group, receiving extensive business training and a loan of just £13.</p>
+            <a href="#impact" class="btn btn-outline mt-lg">View Her Impact</a>
+        </div>
+        <div class="col-6 reveal">
+            <img src="media/mrs_mkonde.jpg" alt="Mrs Mkonde Success Story" style="width:100%; border-radius:8px; object-fit:cover; aspect-ratio:4/3;">
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     AWARDS BANNER (INJECTED)
+     ═══════════════════════════════════════════════════════════ -->
+<section style="background:var(--paper); padding:var(--sp-2xl) 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border);" aria-label="Awards and Recognition">
+    <div class="container reveal">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:var(--sp-lg);">
+            <div>
+                <p class="overline mb-sm">GLOBAL RECOGNITION</p>
+                <h3 style="margin:0;">MicroLoan Foundation is the winner of the<br><span style="color:var(--canopy);">60 Decibels Top Impact Award</span>.</h3>
+            </div>
+            <div style="display:flex; gap:var(--sp-xl); align-items:center;">
+                <div style="font-family:var(--serif); font-size:1.5rem; color:var(--earth);">60 Decibels Top Impact Award</div>
+                <div style="width:1px; height:40px; background:var(--border);"></div>
+                <div style="font-family:var(--serif); font-size:1.5rem; color:var(--indigo);">European Microfinance Award</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NEWSLETTER SIGNUP (INJECTED)
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="newsletter" aria-label="Newsletter Signup">
+    <div class="grid" style="align-items:center; background:var(--ink); border-radius:12px; overflow:hidden;">
+        <div class="col-5" style="padding:0;">
+            <img src="media/happy_group.png" alt="Happy group of entrepreneurs" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+        <div class="col-7" style="padding:var(--sp-3xl);">
+            <h2 style="color:var(--cream); margin-bottom:var(--sp-md);">Let our entrepreneurs<br>inspire you.</h2>
+            <p style="color:var(--stone-light); margin-bottom:var(--sp-xl);">Sign up to our newsletter for the latest updates, success stories, and impact reports directly from the field.</p>
+            <form onsubmit="event.preventDefault();" style="display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
+                <input type="text" placeholder="Full Name*" style="flex:1; min-width:200px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
+                <input type="email" placeholder="Email*" style="flex:1; min-width:200px; padding:var(--sp-md); border-radius:4px; border:none; outline:none; font-family:var(--mono);">
+                <button type="button" class="btn btn-fill" style="background:var(--gold); color:var(--ink); border:none;">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     17 — STRATEGIC RECOMMENDATION
+     ═══════════════════════════════════════════════════════════ -->
+<section class="sec-pad container lazy-section" id="recommendation" aria-label="Strategic recommendation">
+    <div class="sec-head">
+        <span class="sec-num">17 / RECOMMENDATION</span>
+        <span class="tag tag-rec">STRATEGIC RECOMMENDATION</span>
+    </div>
+
+    <div class="grid">
+        <div class="col-8 reveal">
+            <div style="margin-bottom:var(--sp-3xl)">
+                <h3 class="c-earth mb-sm">DIVERSIFY.</h3>
+                <p class="body-sm">Protect against geographic concentration. Build the five-source funding engine across institutional, corporate, government, private, and digital channels.</p>
+            </div>
+            <div style="margin-bottom:var(--sp-3xl)">
+                <h3 class="c-canopy mb-sm">FLEXIBILISE.</h3>
+                <p class="body-sm">Increase unrestricted funding. Prioritise donor types that provide operational flexibility: private philanthropy and digital community donors.</p>
+            </div>
+            <div style="margin-bottom:var(--sp-3xl)">
+                <h3 class="c-indigo mb-sm">PARTNER.</h3>
+                <p class="body-sm">Build long-term institutional, corporate, and philanthropic relationships. Partnership, not sponsorship. Multi-year commitments over one-time grants.</p>
+            </div>
+            <div style="margin-bottom:var(--sp-3xl)">
+                <h3 class="c-gold mb-sm">DIGITALISE.</h3>
+                <p class="body-sm">Scale donor engagement through story-driven digital campaigns, recurring giving, and transparent impact reporting.</p>
+            </div>
+            <div style="margin-bottom:var(--sp-3xl)">
+                <h3 class="c-stone mb-sm">PROVE.</h3>
+                <p class="body-sm">Use transparent impact reporting to differentiate MLF. The 99% repayment rate, 575,000 women served, and $166M+ disbursed are the strongest proof points in microfinance.</p>
+            </div>
+            <div>
+                <h3 class="c-earth mb-sm">SCALE.</h3>
+                <p class="body-sm">Grow toward one million women annually by 2035. Match funding growth with operational capacity — people, systems, and community infrastructure.</p>
+            </div>
+        </div>
+        <div class="col-4 reveal">
+            <div style="position:sticky;top:calc(var(--nav-h) + var(--sp-xl))">
+                <p class="overline mb-lg">KEY FIGURES</p>
+                <div class="mb-xl">
+                    <div style="font-family:var(--serif);font-size:2rem;line-height:1">$1.52M</div>
+                    <p class="caption mt-xs">2024 BASELINE</p>
+                </div>
+                <div class="mb-xl">
+                    <div style="font-family:var(--serif);font-size:2rem;line-height:1;color:var(--gold)">$3M+</div>
+                    <p class="caption mt-xs">YEAR 1 TARGET</p>
+                </div>
+                <div class="mb-xl">
+                    <div style="font-family:var(--serif);font-size:2rem;line-height:1;color:var(--canopy)">$30M</div>
+                    <p class="caption mt-xs">6-YEAR AMBITION</p>
+                </div>
+                <div class="mb-xl">
+                    <div style="font-family:var(--serif);font-size:2rem;line-height:1;color:var(--earth)">1,000,000</div>
+                    <p class="caption mt-xs">WOMEN BY 2035</p>
+                </div>
+                <span class="tag tag-case">CASE-SOURCED</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FINAL SCREEN
+     ═══════════════════════════════════════════════════════════ -->
+<section class="final-section" id="final" aria-label="Call to action">
+    <h1 class="final-headline reveal">
+        FUNDING THE NEXT<br>
+        <span style="color:var(--earth);font-style:italic">MILLION JOURNEYS</span><br>
+        OUT OF POVERTY.
+    </h1>
+    <div class="final-strategy reveal">
+        DIVERSIFY THE FUNDING BASE.<br>
+        PROTECT FLEXIBILITY.<br>
+        SCALE WHAT WORKS.
+    </div>
+    <div class="final-actions reveal">
+        <a href="#fundingEngine" class="btn btn-earth">Explore the Funding Engine →</a>
+        <a href="#humanScale" class="btn">View the Impact →</a>
+        <button class="btn" onclick="openDeck()">Present the Strategy →</button>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">MICROLOAN IMPACTHUB — GMCC 2026 · Designed for Global Microfinance Case Competition</div>
+            <div class="footer-links">
+                <a href="#hero">Overview</a>
+                <a href="#fundingEngine">Engine</a>
+                <a href="#donorStrategy">Pipeline</a>
+                <a href="#simulator">Simulator</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     EVIDENCE SIDE PANEL
+     ═══════════════════════════════════════════════════════════ -->
+<div class="side-panel" id="evidencePanel" role="dialog" aria-label="Evidence detail" aria-modal="true">
+    <div class="panel-close" onclick="closeEvidence()" tabindex="0" role="button" aria-label="Close">CLOSE ×</div>
+    <p class="overline mb-sm">EVIDENCE NOTE</p>
+    <h2 id="panelValue" class="mb-md" style="font-size:3rem">—</h2>
+    <h4 id="panelTitle" class="mb-lg">—</h4>
+
+    <p class="caption mb-xs">YEAR / PERIOD</p>
+    <p class="body-sm mb-lg" id="panelYear">—</p>
+
+    <p class="caption mb-xs">WHAT IT MEANS</p>
+    <p class="body-sm mb-lg" id="panelMeaning">—</p>
+
+    <p class="caption mb-xs">SOURCE</p>
+    <p class="body-sm mb-lg" id="panelSource">—</p>
+
+    <p class="caption mb-xs">DATA TYPE</p>
+    <p class="body-sm mb-lg" id="panelType">—</p>
+
+    <p class="caption mb-xs">LOCATION</p>
+    <p class="body-sm mb-lg" id="panelLocation">—</p>
+
+    <hr class="rule">
+    <p class="caption mb-xs">LIMITATIONS / CONTEXT</p>
+    <p class="body-sm" id="panelLimitations">—</p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     DATA INTEGRITY MODAL
+     ═══════════════════════════════════════════════════════════ -->
+<div class="modal-bg" id="dataIntegrityModal" role="dialog" aria-label="Data integrity framework" aria-modal="true">
+    <div class="modal-content">
+        <div class="modal-close" onclick="closeDataIntegrity()" role="button" tabindex="0">CLOSE ×</div>
+        <p class="overline mb-lg">DATA INTEGRITY FRAMEWORK</p>
+        <h3 class="mb-xl">Ensuring Credibility<br>for GMCC Judges</h3>
+
+        <div style="padding:var(--sp-md);background:var(--canopy-soft);border:1px solid var(--canopy-light);margin-bottom:var(--sp-md)">
+            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:var(--canopy);margin-bottom:0.2rem">CASE-SOURCED</p>
+            <p class="body-sm">Directly from the GMCC 2026 MLF case booklet. $1.52M revenue, 84% UK/Europe, 99% repayment, 575,000 women, $166M+ disbursed.</p>
+        </div>
+        <div style="padding:var(--sp-md);background:var(--earth-glow);border:1px solid var(--earth-light);margin-bottom:var(--sp-md)">
+            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:var(--earth);margin-bottom:0.2rem">ILLUSTRATIVE MODEL</p>
+            <p class="body-sm">Strategic projections and scenario modeling built for the case presentation. Not official MLF targets.</p>
+        </div>
+        <div style="padding:var(--sp-md);background:var(--gold-glow);border:1px solid var(--gold);margin-bottom:var(--sp-md)">
+            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:#8B6D1E;margin-bottom:0.2rem">STRATEGIC RECOMMENDATION</p>
+            <p class="body-sm">Strategy recommendations for the GMCC case response. Not prescriptive commitments.</p>
+        </div>
+        <div style="padding:var(--sp-md);background:rgba(138,130,120,.04);border:1px solid var(--stone-light)">
+            <p class="mono" style="font-size:0.6875rem;font-weight:700;color:var(--stone);margin-bottom:0.2rem">FICTIONAL PROTOTYPE</p>
+            <p class="body-sm">Fictional donor names and organisations for pipeline demonstration. Not real entities.</p>
+        </div>
+
+        <button class="btn btn-fill mt-xl" onclick="closeDataIntegrity()" style="width:100%;justify-content:center">Acknowledge & Close</button>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRESENTATION DECK
+     ═══════════════════════════════════════════════════════════ -->
+<div class="deck" id="deckOverlay" role="dialog" aria-label="Presentation deck" aria-modal="true">
+    <div class="deck-head">
+        <div style="display:flex;align-items:center;gap:0.5rem">
+            <span class="nav-dot"></span>
+            <span class="mono" style="font-size:0.6875rem">GMCC 2026 PRESENTATION</span>
+        </div>
+        <button class="nav-btn" onclick="closeDeck()">EXIT</button>
+    </div>
+    <div class="deck-body" id="deckSlideContent"></div>
+    <div class="deck-foot">
+        <span class="mono" style="font-size:0.6875rem;color:var(--stone)" id="deckCounter">Slide 1 of 5</span>
+        <div style="display:flex;gap:var(--sp-sm)">
+            <button class="btn btn-sm" onclick="prevSlide()">← PREV</button>
+            <button class="btn btn-fill btn-sm" onclick="nextSlide()">NEXT →</button>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════════════ -->
+<!-- CDN Libraries -->
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/vendor/three.min.js" defer></script>
+
+<!-- Application -->
+<script src="js/app.js" defer></script>
+<script src="js/scene.js" defer></script>
+<script src="js/animations.js" defer></script>
+
+<!-- Boot -->
+<script>
+window.addEventListener('load', function() {
+    requestAnimationFrame(function() {
+        var globeEl = document.getElementById('africaGlobe');
+        if (globeEl) {
+            if (window.MLScene && MLScene.isSupported()) {
+                var obs = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        MLScene.init('africaGlobe');
+                        obs.disconnect();
+                    }
+                });
+                obs.observe(globeEl);
+            } else {
+                var fallback = globeEl.querySelector('.globe-fallback');
+                if (fallback) fallback.style.display = 'flex';
+            }
+        }
+        if (window.MLAnimations) MLAnimations.init();
+    });
+});
+</script>
+
+</body>
+</html>
