@@ -324,7 +324,7 @@
     });
   }
 
-      function initTimeline(isDesktop, reduceMotion) {
+        function initTimeline(isDesktop, reduceMotion) {
     if (reduceMotion) return;
     
     const timelineSection = document.getElementById('timeline30m');
@@ -333,9 +333,9 @@
     const years = timelineSection.querySelectorAll('.timeline-year');
     if (!years || years.length === 0) return;
 
-    const morphSvg = document.getElementById('timelineMorphSvg');
-    const morphText = document.getElementById('timelineMorphText');
-    const morphBadge = document.getElementById('timelineMorphBadge');
+    const travelingSvg = document.getElementById('timelineTravelingSvg');
+    const travelingText = document.getElementById('timelineTravelingText');
+    const travelingBadge = document.getElementById('timelineTravelingBadge');
 
     const ERAS = [
       {
@@ -372,16 +372,22 @@
         pin: isDesktop,
         scrub: 0.5,
         onUpdate: (self) => {
+          // Slide badge horizontally along the track (0% to 100%)
+          if (travelingBadge) {
+            const posX = Math.min(100, Math.max(0, self.progress * 100));
+            travelingBadge.style.left = posX + '%';
+          }
+
           const eraIdx = Math.min(4, Math.floor(self.progress * 5));
           if (eraIdx !== currentEraIdx) {
             currentEraIdx = eraIdx;
             const era = ERAS[eraIdx];
-            if (morphSvg) morphSvg.innerHTML = era.svg;
-            if (morphText) morphText.textContent = era.text;
-            if (morphBadge) {
-              window.gsap.fromTo(morphBadge, 
-                { scale: 0.85, rotation: -10 }, 
-                { scale: 1, rotation: 0, duration: 0.35, ease: 'back.out(2)' }
+            if (travelingSvg) travelingSvg.innerHTML = era.svg;
+            if (travelingText) travelingText.textContent = era.text;
+            if (travelingBadge) {
+              window.gsap.fromTo(travelingBadge, 
+                { scale: 0.8, rotation: -12 }, 
+                { scale: 1, rotation: 0, duration: 0.3, ease: 'back.out(2)' }
               );
             }
           }
