@@ -224,10 +224,10 @@
 
         if (p < 0.45) {
           const localP = p / 0.45;
-          const mappedVal = Math.floor(160000 + localP * (575000 - 160000));
+          const mappedVal = Math.floor(160000 + localP * (1000000 - 160000));
           millionNum.textContent = mappedVal.toLocaleString() + (localP > 0.9 ? '+' : '');
-          if (millionFrom) millionFrom.textContent = localP < 0.1 ? 'ANNUAL BASELINE' : 'REACHED TO DATE';
-          if (millionContext) millionContext.textContent = 'CUMULATIVE WOMEN IMPACTED';
+          if (millionFrom) millionFrom.textContent = localP < 0.1 ? 'ANNUAL BASELINE' : '2035 SCALE TARGET';
+          if (millionContext) millionContext.textContent = 'WOMEN REACHED ANNUALLY';
 
           if (step1) {
             step1.style.opacity = '1';
