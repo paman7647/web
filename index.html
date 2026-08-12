@@ -45,7 +45,7 @@
             <a href="#newsletter" class="nav-link" style="text-decoration:none;">Take Action</a>
         </div>
         <div class="nav-actions">
-            <button class="nav-btn-pill" onclick="window.location.hash='#newsletter'" aria-label="Join a circle">Join a circle</button>
+            <button class="nav-btn-pill" onclick="openDonationModal()" aria-label="Join a circle">Join a circle</button>
             <button class="mobile-menu-toggle" aria-label="Toggle menu" style="background:none;border:none;padding:0.2rem;cursor:pointer;display:none;align-items:center;color:var(--ink);" onclick="document.querySelector('.mobile-overlay').classList.toggle('active')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
             </button>
@@ -504,6 +504,33 @@
         <button class="btn" onclick="openDeck()">Present the Strategy →</button>
     </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GIVING CIRCLE & DONATION MODAL (INTERACTIVE DEMO)
+     ═══════════════════════════════════════════════════════════ -->
+<div class="modal-bg" id="donationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+        <button class="panel-close" onclick="closeDonationModal()" style="position:absolute; top:var(--sp-md); right:var(--sp-md); background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--ink);">&times;</button>
+        <p class="overline mb-xs" style="color:var(--earth);">GIVING CIRCLES & DONATIONS</p>
+        <h3 id="modalTitle" class="mb-sm">Join a Giving Circle</h3>
+        <p class="body-sm mb-lg">Select a monthly contribution tier to directly fund microloans, financial literacy, and mentorship for female entrepreneurs in Southern Africa.</p>
+
+        <p class="caption mb-xs">SELECT CONTRIBUTION TIER</p>
+        <div class="tier-grid">
+            <div class="tier-btn active" onclick="selectDonationTier(this, '$25', 'Funds 1 Female Entrepreneur per year with business training & seed loan.')">$25 / Month</div>
+            <div class="tier-btn" onclick="selectDonationTier(this, '$50', 'Funds 2 Female Entrepreneurs & household financial literacy.')">$50 / Month</div>
+            <div class="tier-btn" onclick="selectDonationTier(this, '$100', 'Funds a Full Community Circle of 5 Women.')">$100 / Month</div>
+            <div class="tier-btn" onclick="selectDonationTier(this, '$500', 'Strategic Anchor Supporter — Funds 25 Women.')">$500 / Month</div>
+        </div>
+
+        <div style="padding:var(--sp-md); background:var(--cream); border-radius:6px; margin-bottom:var(--sp-lg);">
+            <p class="caption mb-xs">DEMO IMPACT PREVIEW</p>
+            <p class="body-sm" id="donationImpactPreview" style="color:var(--earth-deep); font-weight:600;">Funds 1 Female Entrepreneur per year with business training & seed loan.</p>
+        </div>
+
+        <button class="btn btn-earth" onclick="submitDonation()" style="width:100%;">Confirm & Join Circle (Demo)</button>
+    </div>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════════
      FOOTER

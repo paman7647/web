@@ -720,6 +720,33 @@
 
 
 
+  /* ── DONATION MODAL HANDLERS ──────────────────────────────── */
+  window.openDonationModal = function() {
+    var modal = el('donationModal');
+    if (modal) modal.classList.add('active');
+  };
+  window.closeDonationModal = function() {
+    var modal = el('donationModal');
+    if (modal) modal.classList.remove('active');
+  };
+  window.selectDonationTier = function(btn, amount, impactText) {
+    document.querySelectorAll('.tier-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var impactEl = el('donationImpactPreview');
+    if (impactEl) impactEl.textContent = impactText;
+  };
+  window.submitDonation = function() {
+    var impactEl = el('donationImpactPreview');
+    if (impactEl) {
+      impactEl.textContent = '🎉 Thank you! Your demo Giving Circle contribution has been confirmed.';
+      impactEl.style.color = 'var(--canopy)';
+      impactEl.style.fontWeight = '700';
+    }
+    setTimeout(function() {
+      closeDonationModal();
+    }, 2200);
+  };
+
   /* ── UTILITY ──────────────────────────────────────────────── */
   function el(id) { return document.getElementById(id); }
 
