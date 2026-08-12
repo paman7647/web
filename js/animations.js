@@ -324,7 +324,7 @@
     });
   }
 
-  function initTimeline(isDesktop, reduceMotion) {
+    function initTimeline(isDesktop, reduceMotion) {
     if (reduceMotion) return;
     
     const timelineSection = document.getElementById('timeline30m');
@@ -333,22 +333,29 @@
     const years = timelineSection.querySelectorAll('.timeline-year');
     if (!years || years.length === 0) return;
 
-    window.gsap.set(years, { opacity: 0.2 });
+    window.gsap.set(years, { opacity: 0.3 });
 
     const tl = window.gsap.timeline({
       scrollTrigger: {
         trigger: '.timeline',
         start: isDesktop ? 'center center' : 'top center',
-        end: '+=1500', 
+        end: '+=1200', 
         pin: isDesktop,
-        scrub: 1
+        scrub: 0.5
       }
     });
 
     years.forEach((year, i) => {
-      tl.to(year, { opacity: 1, duration: 1 });
+      const badge = year.querySelector('.timeline-icon-badge');
+      tl.to(year, { opacity: 1, duration: 1 }, "+=0.2");
+      if (badge) {
+        tl.to(badge, { scale: 1.25, duration: 1 }, "<");
+      }
       if (i < years.length - 1) {
-        tl.to(year, { opacity: 0.2, duration: 1 }, "+=0.5");
+        tl.to(year, { opacity: 0.3, duration: 1 }, "+=0.5");
+        if (badge) {
+          tl.to(badge, { scale: 1, duration: 1 }, "<");
+        }
       }
     });
   }
