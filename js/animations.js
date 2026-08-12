@@ -209,7 +209,7 @@
     if (millionText2) millionText2.textContent = 'IT IS ONE MILLION OPPORTUNITIES.';
     if (millionDetail) millionDetail.textContent = 'One million businesses started. One million households secured. Four million children in school.';
 
-    millionNum.textContent = '100,000';
+    millionNum.textContent = '160,000';
     if (millionFrom) millionFrom.textContent = 'ANNUAL CLIENTS';
     if (millionContext) millionContext.textContent = 'WOMEN / YEAR';
 
@@ -224,7 +224,7 @@
 
         if (p < 0.45) {
           const localP = p / 0.45;
-          const mappedVal = Math.floor(100000 + localP * (575000 - 100000));
+          const mappedVal = Math.floor(160000 + localP * (575000 - 160000));
           millionNum.textContent = mappedVal.toLocaleString() + (localP > 0.9 ? '+' : '');
           if (millionFrom) millionFrom.textContent = localP < 0.1 ? 'ANNUAL BASELINE' : 'REACHED TO DATE';
           if (millionContext) millionContext.textContent = 'CUMULATIVE WOMEN IMPACTED';
