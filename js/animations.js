@@ -118,6 +118,11 @@
           } else {
             nav.classList.remove('scrolled');
           }
+          const btt = document.getElementById('backToTop');
+          if (btt) {
+            if (lastScroll > 500) btt.classList.add('active');
+            else btt.classList.remove('active');
+          }
           ticking = false;
         });
         ticking = true;

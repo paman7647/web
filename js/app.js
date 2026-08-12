@@ -548,13 +548,26 @@
     el('barCost').style.width = Math.min(100, 100 - cost * 4) + '%';
   };
 
-  /* ── IMPACT SIMULATOR ─────────────────────────────────────── */
+  /* ── IMPACT SIMULATOR & MULTI-CURRENCY ─────────────────────── */
+  var currentCurrency = 'USD';
+  var RATES = { USD: { symbol: '$', rate: 1 }, GBP: { symbol: '£', rate: 0.78 }, EUR: { symbol: '€', rate: 0.91 } };
+
+  window.setCurrency = function(btn, curr) {
+    currentCurrency = curr;
+    document.querySelectorAll('.curr-pill').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    window.updateSimulator();
+  };
+
   window.updateSimulator = function () {
     var cap = +el('simSlider').value;
     var cost = +(el('simCost').value) || 50;
     var dep = +(el('simDep').value) || 4.2;
 
-    el('simCapDisplay').textContent = '$' + cap.toLocaleString();
+    var currObj = RATES[currentCurrency] || RATES.USD;
+    var convertedCap = Math.round(cap * currObj.rate);
+
+    el('simCapDisplay').textContent = currObj.symbol + convertedCap.toLocaleString();
     var women = Math.round(cap / cost);
     var dependents = Math.round(women * dep);
     var school = Math.round(dependents * 0.92);
@@ -567,6 +580,24 @@
   window.toggleAssumptionLab = function () {
     var lab = el('assumptionLab');
     lab.style.display = lab.style.display === 'none' ? 'block' : 'none';
+  };
+
+  /* ── RISK MATRIX LIVE FILTERING ──────────────────────────── */
+  window.filterRisks = function(btn, cat) {
+    document.querySelectorAll('.risk-filter-pill').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+
+    var cards = document.querySelectorAll('#riskMonitor .col-4');
+    cards.forEach(function(card) {
+      var tag = card.querySelector('.tag');
+      var text = (tag ? tag.textContent : '') + ' ' + card.textContent;
+      if (cat === 'all' || text.toLowerCase().includes(cat.toLowerCase())) {
+        card.style.display = 'block';
+        card.style.opacity = '1';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   };
 
   /* ── FOLLOW THE MONEY ─────────────────────────────────────── */
