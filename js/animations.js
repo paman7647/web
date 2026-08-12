@@ -192,74 +192,49 @@
 
     if (!millionNum) return;
 
-    if (millionText1 && !millionText1.textContent.trim()) millionText1.textContent = 'ONE MILLION IS NOT A NUMBER.';
-    if (millionText2 && !millionText2.textContent.trim()) millionText2.textContent = 'IT IS ONE MILLION OPPORTUNITIES.';
-    if (millionDetail && !millionDetail.textContent.trim()) millionDetail.textContent = 'One million businesses started. One million households secured. Four million children in school.';
-
     const step1 = document.getElementById('millionStep1');
     const step2 = document.getElementById('millionStep2');
 
-    if (!isDesktop) {
-      if (step1) {
-        step1.style.opacity = '0';
-        step1.style.visibility = 'hidden';
-      }
-      if (step2) {
-        step2.style.opacity = '1';
-        step2.style.visibility = 'visible';
-      }
-      if (millionText1) millionText1.style.opacity = '1';
-      if (millionText2) millionText2.style.opacity = '1';
-      if (millionDetail) millionDetail.style.opacity = '1';
-      if (millionPillars) millionPillars.style.opacity = '1';
-      return;
+    // Force ALL elements visible immediately on load across all viewports
+    if (step1) {
+      step1.style.opacity = '1';
+      step1.style.visibility = 'visible';
+      step1.style.display = 'flex';
     }
+    if (step2) {
+      step2.style.opacity = '1';
+      step2.style.visibility = 'visible';
+      step2.style.display = 'block';
+    }
+    if (millionText1) { millionText1.style.opacity = '1'; millionText1.textContent = 'ONE MILLION IS NOT A NUMBER.'; }
+    if (millionText2) { millionText2.style.opacity = '1'; millionText2.textContent = 'IT IS ONE MILLION OPPORTUNITIES.'; }
+    if (millionDetail) { millionDetail.style.opacity = '1'; millionDetail.textContent = 'One million businesses started. One million households secured. Four million children in school.'; }
+    if (millionPillars) { millionPillars.style.opacity = '1'; }
 
-    if (millionText1) millionText1.style.opacity = '0';
-    if (millionText2) millionText2.style.opacity = '0';
-    if (millionDetail) millionDetail.style.opacity = '0';
-    if (millionPillars) millionPillars.style.opacity = '0';
+    millionNum.textContent = '160,000';
+    if (millionFrom) millionFrom.textContent = 'FROM';
+    if (millionContext) millionContext.textContent = 'WOMEN / YEAR';
 
-    const obj = { val: 160000 };
+    window.ScrollTrigger.create({
+      trigger: wrap,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      scrub: 0.5,
+      onUpdate: (self) => {
+        const p = self.progress;
 
-    window.gsap.to(obj, {
-      val: 1000000,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: wrap,
-        start: 'top 70%',
-        end: '+=900',
-        pin: isDesktop,
-        scrub: reduceMotion ? false : 0.5,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const p = self.progress;
-
-          if (p < 0.5) {
-            if (step1) { step1.style.visibility = 'visible'; step1.style.opacity = '1'; }
-            if (step2) { step2.style.visibility = 'hidden'; step2.style.opacity = '0'; }
-
-            const localP = p / 0.5;
-            const mappedVal = Math.floor(160000 + localP * (575000 - 160000));
-            millionNum.textContent = mappedVal.toLocaleString();
-            if (millionFrom) millionFrom.textContent = p < 0.1 ? 'BASE' : 'REACHED';
-            if (millionContext) millionContext.textContent = 'WOMEN IMPACTED';
-          } 
-          else {
-            if (step1) { step1.style.visibility = 'hidden'; step1.style.opacity = '0'; }
-            if (step2) { step2.style.visibility = 'visible'; step2.style.opacity = '1'; }
-
-            const localP = (p - 0.5) / 0.5;
-            const mappedVal = Math.floor(575000 + localP * (1000000 - 575000));
-            millionNum.textContent = mappedVal.toLocaleString();
-            if (millionFrom) millionFrom.textContent = 'AMBITION';
-            if (millionContext) millionContext.textContent = 'WOMEN / YEAR BY 2035';
-
-            if (millionText1) millionText1.style.opacity = '1';
-            if (millionText2) millionText2.style.opacity = '1';
-            if (millionDetail) millionDetail.style.opacity = '1';
-            if (millionPillars) millionPillars.style.opacity = '1';
-          }
+        if (p < 0.5) {
+          const localP = p / 0.5;
+          const mappedVal = Math.floor(160000 + localP * (575000 - 160000));
+          millionNum.textContent = mappedVal.toLocaleString();
+          if (millionFrom) millionFrom.textContent = p < 0.1 ? 'FROM' : 'REACHED';
+          if (millionContext) millionContext.textContent = 'WOMEN IMPACTED';
+        } else {
+          const localP = (p - 0.5) / 0.5;
+          const mappedVal = Math.floor(575000 + localP * (1000000 - 575000));
+          millionNum.textContent = mappedVal.toLocaleString();
+          if (millionFrom) millionFrom.textContent = 'AMBITION';
+          if (millionContext) millionContext.textContent = 'WOMEN / YEAR BY 2035';
         }
       }
     });
