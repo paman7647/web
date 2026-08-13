@@ -12,7 +12,7 @@
     <link href="css/fonts.css" rel="stylesheet">
 
     <!-- Design System -->
-    <link rel="stylesheet" href="css/styles.css?v=20260813_v9">
+    <link rel="stylesheet" href="css/styles.css?v=20260813_v11">
 
     <meta property="og:title" content="MicroLoan Foundation — Women's Empowerment">
     <meta property="og:description" content="Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
@@ -41,7 +41,7 @@
             <a href="#simulator" class="nav-link" style="text-decoration:none;">Simulator</a>
             <a href="#partnership" class="nav-link" style="text-decoration:none;">Blueprint</a>
             <a href="#successStories" class="nav-link" style="text-decoration:none;">Stories</a>
-            <a href="#partners" class="nav-link" style="text-decoration:none;">Partners</a>
+            <a href="#partners" class="nav-link" style="text-decoration:none;">Partners →</a>
             <a href="#newsletter" class="nav-link" style="text-decoration:none;" onclick="scrollToNewsletter(event)">Take Action</a>
         </div>
         <div class="nav-actions">
@@ -59,7 +59,7 @@
     <a href="#simulator" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Simulator</a>
     <a href="#partnership" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Blueprint</a>
     <a href="#successStories" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Stories</a>
-    <a href="#partners" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Partners</a>
+    <a href="#partners" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Partners →</a>
     <a href="#newsletter" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="scrollToNewsletter(event); this.parentElement.classList.remove('active');">Take Action</a>
 </div>
 <style>
@@ -811,14 +811,270 @@
     <h2 class="mb-md reveal">OUR PARTNERS &<br>STRATEGIC DONORS</h2>
     <p class="body-sm mb-lg reveal" style="max-width:640px; color:var(--stone-dark);">Collaborating with international foundations, high-net-worth philanthropic donors, microfinance networks, and strategic giving circles to scale female entrepreneurship across Southern Africa.</p>
 
-    <!-- Filter Pills -->
-    <div class="reveal" style="display:flex; gap:var(--sp-xs); margin-bottom:var(--sp-xl); flex-wrap:wrap;">
-        <button class="risk-filter-pill active" onclick="filterPartners(this, 'all')">All Partners & Donors</button>
-        <button class="risk-filter-pill" onclick="filterPartners(this, 'foundation')">Foundations & Alliances</button>
-        <button class="risk-filter-pill" onclick="filterPartners(this, 'donor')">Top Donors & Circles</button>
+    <!-- Filter Pills & Navigation Arrows Bar -->
+    <div class="reveal" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--sp-lg); flex-wrap:wrap; gap:var(--sp-md);">
+        <div style="display:flex; gap:var(--sp-xs); flex-wrap:wrap;">
+            <button class="risk-filter-pill active" onclick="filterPartners(this, 'all')">All Partners & Donors</button>
+            <button class="risk-filter-pill" onclick="filterPartners(this, 'multilateral')">Multilateral & Government</button>
+            <button class="risk-filter-pill" onclick="filterPartners(this, 'foundation')">Foundations & Networks</button>
+            <button class="risk-filter-pill" onclick="filterPartners(this, 'donor')">Top Donors & Circles</button>
+        </div>
+        <!-- Navigation Arrow Controls -->
+        <div style="display:flex; gap:var(--sp-xs); align-items:center;">
+            <button onclick="scrollPartners('prev')" class="btn" style="padding:6px 14px; font-size:0.75rem; background:var(--paper); color:var(--ink); border:1px solid var(--border); border-radius:6px; cursor:pointer;" aria-label="Previous partners">◀ PREV</button>
+            <button onclick="scrollPartners('next')" class="btn" style="padding:6px 14px; font-size:0.75rem; background:var(--earth); color:#fff; border:1px solid var(--earth); border-radius:6px; cursor:pointer;" aria-label="Next partners">NEXT ▶</button>
+        </div>
+    </div>
+
+    <!-- Official Multilateral & Government Partners Logo Banner -->
+    <div class="reveal mb-lg" style="background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:var(--sp-lg) var(--sp-xl); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--sp-md); box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+        <!-- EU -->
+        <div style="display:flex; align-items:center; gap:8px;">
+            <div style="background:#003399; color:#FFCC00; font-weight:900; font-size:0.8rem; padding:4px 8px; border-radius:3px; font-family:var(--sans);">★ EU ★</div>
+            <span style="font-family:var(--sans); font-size:0.85rem; font-weight:800; color:#003399; letter-spacing:0.04em;">EUROPEAN UNION</span>
+        </div>
+        <!-- NETHERLANDS -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <div style="width:4px; height:24px; background:#00205B;"></div>
+            <div>
+                <div style="font-family:var(--serif); font-size:0.75rem; font-weight:700; color:#00205B;">Government of the Netherlands</div>
+                <div style="font-family:var(--mono); font-size:0.6rem; color:var(--stone);">Ministry of Foreign Affairs</div>
+            </div>
+        </div>
+        <!-- SWEDEN SVERIGE -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <div style="background:#006AA7; color:#FECC00; font-weight:800; font-size:0.7rem; padding:3px 6px; border-radius:2px;">🇸🇪</div>
+            <div>
+                <span style="font-family:var(--sans); font-size:0.8rem; font-weight:800; color:#006AA7;">Sweden </span>
+                <span style="font-family:var(--sans); font-size:0.85rem; font-weight:800; color:#006AA7;">Sverige</span>
+            </div>
+        </div>
+        <!-- GERMAN COOPERATION / GIZ -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <div style="display:flex; flex-direction:column; gap:1px;">
+                <span style="width:14px; height:3px; background:#000;"></span>
+                <span style="width:14px; height:3px; background:#DD0000;"></span>
+                <span style="width:14px; height:3px; background:#FFCC00;"></span>
+            </div>
+            <div>
+                <div style="font-family:var(--sans); font-size:0.8rem; font-weight:800; color:#000;">german cooperation</div>
+                <div style="font-family:var(--mono); font-size:0.55rem; color:#DD0000; letter-spacing:0.05em;">DEUTSCHE ZUSAMMENARBEIT / GIZ</div>
+            </div>
+        </div>
+        <!-- WE4F -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <div style="background:linear-gradient(135deg, #00A896, #028090); color:#fff; font-weight:800; font-size:0.65rem; padding:4px 6px; border-radius:3px;">WE4F</div>
+            <span style="font-family:var(--sans); font-size:0.75rem; font-weight:800; color:#028090;">WATER & ENERGY FOR FOOD</span>
+        </div>
+    </div>
+
+    <!-- Official Microfinance Alliances Logo Banner -->
+    <div class="reveal mb-2xl" style="background:var(--paper); border:1px solid var(--border); border-radius:12px; padding:var(--sp-lg) var(--sp-xl); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--sp-md); box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+        <!-- KIVA -->
+        <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#589B37"/><circle cx="15.5" cy="8.5" r="2.5" fill="#589B37"/><path d="M12 12c-2.5 0-5 2-5 5h10c0-3-2.5-5-5-5z" fill="#589B37"/></svg>
+            <span style="font-family:var(--serif); font-size:1.4rem; font-weight:800; color:#589B37; letter-spacing:-0.03em;">kiva</span>
+        </div>
+        <!-- GRAMEEN CREDIT AGRICOLE -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <span style="display:inline-block; width:10px; height:10px; background:#D8232A; border-radius:50%;"></span>
+            <span style="font-family:var(--sans); font-size:0.75rem; font-weight:800; color:#005B5C;">GRAMEEN CRÉDIT AGRICOLE</span>
+        </div>
+        <!-- WILDHEARTS -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <svg width="20" height="18" viewBox="0 0 24 24" fill="#B31B24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span style="font-family:var(--sans); font-size:0.75rem; font-weight:800; color:#B31B24; letter-spacing:0.06em;">WILDHEARTS</span>
+        </div>
+        <!-- LENDWITHCARE -->
+        <div style="display:flex; align-items:center; gap:2px;">
+            <span style="font-family:var(--sans); font-size:1.1rem; font-weight:800; color:#2D2764;">lendwith</span><span style="font-family:var(--sans); font-size:1.1rem; font-weight:800; color:#E87722;">care</span>
+        </div>
+        <!-- ADA MICROFINANCE -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <div style="background:#C41230; color:#fff; font-family:var(--sans); font-size:0.9rem; font-weight:800; padding:2px 8px; border-radius:10px 2px 10px 2px;">ada</div>
+            <span style="font-family:var(--mono); font-size:0.6rem; color:#C41230; font-weight:700;">INCLUSIVE FINANCE</span>
+        </div>
+        <!-- SCBF & SSNUP -->
+        <div style="display:flex; align-items:center; gap:6px;">
+            <span style="font-family:var(--sans); font-size:0.75rem; font-weight:800; color:#D8232A;">SCBF</span>
+            <span style="color:var(--stone);">·</span>
+            <span style="font-family:var(--sans); font-size:0.75rem; font-weight:800; color:#2C5E4F;">SSNUP</span>
+        </div>
     </div>
 
     <div class="grid reveal" id="partnersGrid" style="row-gap:var(--sp-lg);">
+        <!-- Multilateral & Government Development Partners -->
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #003399; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(0,51,153,0.06) 100%);">
+                <div>
+                    <span class="tag tag-rec mb-sm" style="background:#003399; color:#fff; border-color:#003399;">MULTILATERAL DEVELOPMENT PARTNER</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">European Union (EU)</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Co-funding large-scale rural financial inclusion, female entrepreneurship capital, and regional climate resilience programs in Southern Africa.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #003399; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#003399;">Multilateral Development Institution</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #00205B; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(0,32,91,0.06) 100%);">
+                <div>
+                    <span class="tag tag-case mb-sm" style="border-color:#00205B; color:#00205B; background:rgba(0,32,91,0.1);">GOVERNMENTAL COOPERATION</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Government of the Netherlands</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Ministry of Foreign Affairs partnership backing agricultural micro-business loans, water access, and food security for smallholder women farmers.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #00205B; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#00205B;">Governmental Development Agency</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #006AA7; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(0,106,167,0.06) 100%);">
+                <div>
+                    <span class="tag tag-model mb-sm" style="background:#006AA7; color:#fff; border-color:#006AA7;">SIDA DEVELOPMENT COOPERATION</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Sweden Sverige (Sida)</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Swedish International Development Agency backing gender equality, female economic agency, and sustainable micro-enterprise growth.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #006AA7; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#006AA7;">Bilateral Development Agency</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #DD0000; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(221,0,0,0.06) 100%);">
+                <div>
+                    <span class="tag tag-rec mb-sm" style="background:#DD0000; color:#fff; border-color:#DD0000;">GERMAN COOPERATION & GIZ</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">GIZ / German Cooperation</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Deutsche Gesellschaft für Internationale Zusammenarbeit funding technical capacity, financial literacy training, and local branch officer mobility.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #DD0000; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#DD0000;">Federal Development Agency</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #028090; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(2,128,144,0.06) 100%);">
+                <div>
+                    <span class="tag tag-case mb-sm" style="border-color:#028090; color:#028090; background:rgba(2,128,144,0.1);">GRAND CHALLENGE FUND</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Water and Energy for Food (WE4F)</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Joint international initiative expanding climate-smart micro-loans, solar irrigation, and sustainable agri-business for female farmers.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #028090; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#028090;">Agri-Energy Innovation Fund</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #2C5E4F; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(44,94,79,0.06) 100%);">
+                <div>
+                    <span class="tag tag-model mb-sm">SMALLHOLDER SAFETY NET</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">SSNUP Programme</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Smallholder Safety Net Upscaling Programme strengthening micro-insurance and safety net capital for rural micro-entrepreneurs.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #2C5E4F; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#2C5E4F;">Safety Net Upscaling Fund</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #D8232A; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(216,35,42,0.06) 100%);">
+                <div>
+                    <span class="tag tag-rec mb-sm" style="background:#D8232A; color:#fff; border-color:#D8232A;">SWISS TECHNICAL ASSISTANCE</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Swiss Capacity Building Facility (SCBF)</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Funding financial product innovation, client protection audits, and digital loan tracking tools for rural branch networks.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #D8232A; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#D8232A;">Swiss Microfinance Facility</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="multilateral">
+            <div style="background:var(--paper); border:1px solid #003366; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(0,51,102,0.06) 100%);">
+                <div>
+                    <span class="tag tag-case mb-sm" style="border-color:#003366; color:#003366; background:rgba(0,51,102,0.1);">2024 HUB MEMBER</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Women's Digital Inclusion Hub</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Advocacy alliance advancing digital financial inclusion, mobile money integration, and financial literacy for low-income women.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #003366; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">CATEGORY</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#003366;">Global Digital Financial Hub</span>
+                </div>
+            </div>
+        </div>
+        <!-- Uploaded Key Partners -->
+        <div class="col-4 partner-card" data-category="foundation">
+            <div style="background:var(--paper); border:1px solid #589B37; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(88,155,55,0.06) 100%);">
+                <div>
+                    <span class="tag tag-rec mb-sm" style="background:#589B37; color:#fff; border-color:#589B37;">GLOBAL MICROFINANCE NETWORK</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Kiva Microfinance</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">International crowdfunding network connecting global individual lenders directly to female micro-entrepreneurs in Malawi and Zambia.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #589B37; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">TYPE</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#589B37;">Global Crowdfunding Partner</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="foundation">
+            <div style="background:var(--paper); border:1px solid #005B5C; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(0,91,92,0.06) 100%);">
+                <div>
+                    <span class="tag tag-case mb-sm" style="border-color:#005B5C; color:#005B5C; background:rgba(0,91,92,0.1);">EUROPEAN DEVELOPMENT FINANCE</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Grameen Crédit Agricole</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Providing institutional development capital, technical assistance, and liquidity to strengthen field lending operations.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #005B5C; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">TYPE</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#005B5C;">Microfinance Foundation</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="foundation">
+            <div style="background:var(--paper); border:1px solid #B31B24; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(179,27,36,0.06) 100%);">
+                <div>
+                    <span class="tag tag-model mb-sm" style="background:#B31B24; color:#fff; border-color:#B31B24;">SOCIAL ENTERPRISE PARTNER</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">WildHearts Foundation</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Co-funding micro-entrepreneurship training, financial literacy, and girls' education initiatives across rural branches.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #B31B24; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">TYPE</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#B31B24;">Social Enterprise Partner</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="foundation">
+            <div style="background:var(--paper); border:1px solid #E87722; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(232,119,34,0.06) 100%);">
+                <div>
+                    <span class="tag tag-rec mb-sm" style="background:#E87722; color:#fff; border-color:#E87722;">CARE INTERNATIONAL ALLIANCE</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">Lendwithcare</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">CARE International's microfinance portal enabling peer-to-peer funding for audited female lending circles.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #E87722; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">TYPE</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#E87722;">Direct Peer Microloans</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 partner-card" data-category="foundation">
+            <div style="background:var(--paper); border:1px solid #C41230; border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between; background:linear-gradient(135deg, var(--paper) 0%, rgba(196,18,48,0.06) 100%);">
+                <div>
+                    <span class="tag tag-case mb-sm" style="border-color:#C41230; color:#C41230; background:rgba(196,18,48,0.1);">INCLUSIVE FINANCE</span>
+                    <h3 style="font-size:1.3rem; margin-bottom:var(--sp-xs); color:var(--ink);">ADA Microfinance</h3>
+                    <p class="body-sm" style="font-size:0.85rem; color:var(--stone-dark); margin-bottom:var(--sp-md);">Supporting digital innovation, social performance management, and risk auditing across regional field hubs.</p>
+                </div>
+                <div style="padding-top:var(--sp-md); border-top:1px dashed #C41230; display:flex; justify-content:space-between; align-items:center;">
+                    <span class="caption">TYPE</span>
+                    <span class="mono" style="font-size:0.75rem; font-weight:700; color:#C41230;">Inclusive Finance NGO</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Foundations -->
         <div class="col-4 partner-card" data-category="foundation">
             <div style="background:var(--paper); border:1px solid var(--border); border-radius:10px; padding:var(--sp-xl); height:100%; display:flex; flex-direction:column; justify-content:space-between;">

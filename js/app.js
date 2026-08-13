@@ -1057,6 +1057,23 @@
     });
   };
 
+  window.scrollPartners = function(dir) {
+    var grid = el('partnersGrid');
+    if (!grid) return;
+    var cards = Array.from(grid.querySelectorAll('.partner-card')).filter(function(c) {
+      return window.getComputedStyle(c).display !== 'none';
+    });
+    if (!cards.length) return;
+    
+    if (dir === 'next') {
+      var first = cards.shift();
+      grid.appendChild(first);
+    } else {
+      var last = cards.pop();
+      grid.insertBefore(last, grid.firstChild);
+    }
+  };
+
   window.openSectionDemo = function(key) {
     var d = window.SECTION_DEMOS[key];
     if (!d) return;
