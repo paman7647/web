@@ -1042,14 +1042,24 @@
     }
   };
 
-  window.filterPartners = function(btn, category) {
-    var pills = document.querySelectorAll('#partners .risk-filter-pill');
-    pills.forEach(function(p) { p.classList.remove('active'); });
-    if (btn) btn.classList.add('active');
+  window.openPartnersModal = function(category) {
+    var modal = el('partnersModal');
+    if (!modal) return;
+    modal.classList.add('active');
 
-    var cards = document.querySelectorAll('#partners .partner-card');
+    var cat = category || 'all';
+    var pills = modal.querySelectorAll('.risk-filter-pill');
+    pills.forEach(function(p) {
+      p.classList.remove('active');
+      var onclickAttr = p.getAttribute('onclick') || '';
+      if (onclickAttr.indexOf("'" + cat + "'") !== -1) {
+        p.classList.add('active');
+      }
+    });
+
+    var cards = modal.querySelectorAll('.modal-partner-card');
     cards.forEach(function(card) {
-      if (category === 'all' || card.getAttribute('data-category') === category) {
+      if (cat === 'all' || card.getAttribute('data-category') === cat) {
         card.style.display = 'block';
       } else {
         card.style.display = 'none';
@@ -1057,21 +1067,26 @@
     });
   };
 
-  window.scrollPartners = function(dir) {
-    var grid = el('partnersGrid');
-    if (!grid) return;
-    var cards = Array.from(grid.querySelectorAll('.partner-card')).filter(function(c) {
-      return window.getComputedStyle(c).display !== 'none';
+  window.closePartnersModal = function() {
+    var modal = el('partnersModal');
+    if (modal) modal.classList.remove('active');
+  };
+
+  window.filterPartnersModal = function(btn, category) {
+    var modal = el('partnersModal');
+    if (!modal) return;
+    var pills = modal.querySelectorAll('.risk-filter-pill');
+    pills.forEach(function(p) { p.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+
+    var cards = modal.querySelectorAll('.modal-partner-card');
+    cards.forEach(function(card) {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
     });
-    if (!cards.length) return;
-    
-    if (dir === 'next') {
-      var first = cards.shift();
-      grid.appendChild(first);
-    } else {
-      var last = cards.pop();
-      grid.insertBefore(last, grid.firstChild);
-    }
   };
 
   window.openSectionDemo = function(key) {
