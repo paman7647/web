@@ -1402,3 +1402,29 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   border-bottom: 1px solid var(--border);
   margin-bottom: clamp(1.5rem, 3.5vw, 2.5rem);
 }
+
+/* Follow Us Social Icons */
+.social-icon-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #4A2E5D;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), background-color 0.25s ease;
+  box-shadow: 0 4px 12px rgba(74, 46, 93, 0.25);
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-4px) scale(1.08);
+  background-color: #3b224c;
+  box-shadow: 0 8px 20px rgba(74, 46, 93, 0.4);
+  color: #ffffff;
+}
+
+.social-icon-btn:active {
+  transform: translateY(-1px) scale(1.02);
+}
