@@ -561,7 +561,7 @@
 
   window.updateSimulator = function () {
     var cap = +el('simSlider').value;
-    var cost = +(el('simCost').value) || 50;
+    var cost = +(el('simCost').value) || 30;
     var dep = +(el('simDep').value) || 4.2;
 
     var currObj = RATES[currentCurrency] || RATES.USD;
