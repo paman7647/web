@@ -1025,11 +1025,11 @@
       actionFn: function() { closeSectionDemo(); window.location.hash = '#oneMillion'; }
     },
     partners: {
-      num: '17 / PARTNERS',
-      title: 'Global Alliances & Strategic Donors',
-      desc: 'Institutional foundation partnerships, microfinance networks, and co-funding agreements backing Southern African operations.',
-      auditor: 'Verified Foundation Audit 2024',
-      actionText: 'View Strategic Alliances',
+      num: '17 / PARTNERS & TOP DONORS',
+      title: 'Global Alliances, Foundations & Top Donors',
+      desc: 'Institutional foundation partnerships, major philanthropic donors ($50K-$500K), microfinance networks, and strategic giving circles backing Southern African operations.',
+      auditor: 'Verified Foundation & Donor Audit 2024',
+      actionText: 'View Alliances & Top Donors',
       actionFn: function() { closeSectionDemo(); window.location.hash = '#partners'; }
     },
     final: {
@@ -1040,6 +1040,21 @@
       actionText: 'Register Newsletter Member',
       actionFn: function() { closeSectionDemo(); window.scrollToNewsletter(); }
     }
+  };
+
+  window.filterPartners = function(btn, category) {
+    var pills = document.querySelectorAll('#partners .risk-filter-pill');
+    pills.forEach(function(p) { p.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+
+    var cards = document.querySelectorAll('#partners .partner-card');
+    cards.forEach(function(card) {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   };
 
   window.openSectionDemo = function(key) {
