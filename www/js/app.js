@@ -561,13 +561,18 @@
 
   window.updateSimulator = function () {
     var cap = +el('simSlider').value;
-    var cost = +(el('simCost').value) || 50;
+    var cost = +(el('simCost').value) || 30;
     var dep = +(el('simDep').value) || 4.2;
 
     var currObj = RATES[currentCurrency] || RATES.USD;
     var convertedCap = Math.round(cap * currObj.rate);
 
     el('simCapDisplay').textContent = currObj.symbol + convertedCap.toLocaleString();
+
+    if (el('simLblMin')) el('simLblMin').textContent = currObj.symbol + '100K';
+    if (el('simLblMid')) el('simLblMid').textContent = currObj.symbol + '10M';
+    if (el('simLblMax')) el('simLblMax').textContent = currObj.symbol + '30M';
+
     var women = Math.round(cap / cost);
     var dependents = Math.round(women * dep);
     var school = Math.round(dependents * 0.92);
@@ -1024,14 +1029,69 @@
       actionText: 'Replay Climax Animation',
       actionFn: function() { closeSectionDemo(); window.location.hash = '#oneMillion'; }
     },
+    partners: {
+      num: '17 / PARTNERS & TOP DONORS',
+      title: 'Global Alliances, Foundations & Top Donors',
+      desc: 'Institutional foundation partnerships, major philanthropic donors ($50K-$500K), microfinance networks, and strategic giving circles backing Southern African operations.',
+      auditor: 'Verified Foundation & Donor Audit 2024',
+      actionText: 'View Alliances & Top Donors',
+      actionFn: function() { closeSectionDemo(); window.location.hash = '#partners'; }
+    },
     final: {
-      num: '17 / TAKE ACTION',
+      num: '18 / TAKE ACTION',
       title: 'Final Action Call & Newsletter Registration',
       desc: 'Interactive newsletter registration generating audited digital member cards and instant field report subscription.',
       auditor: 'Community Engagement Spec',
       actionText: 'Register Newsletter Member',
       actionFn: function() { closeSectionDemo(); window.scrollToNewsletter(); }
     }
+  };
+
+  window.openPartnersModal = function(category) {
+    var modal = el('partnersModal');
+    if (!modal) return;
+    modal.classList.add('active');
+
+    var cat = category || 'all';
+    var pills = modal.querySelectorAll('.risk-filter-pill');
+    pills.forEach(function(p) {
+      p.classList.remove('active');
+      var onclickAttr = p.getAttribute('onclick') || '';
+      if (onclickAttr.indexOf("'" + cat + "'") !== -1) {
+        p.classList.add('active');
+      }
+    });
+
+    var cards = modal.querySelectorAll('.modal-partner-card');
+    cards.forEach(function(card) {
+      if (cat === 'all' || card.getAttribute('data-category') === cat) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  };
+
+  window.closePartnersModal = function() {
+    var modal = el('partnersModal');
+    if (modal) modal.classList.remove('active');
+  };
+
+  window.filterPartnersModal = function(btn, category) {
+    var modal = el('partnersModal');
+    if (!modal) return;
+    var pills = modal.querySelectorAll('.risk-filter-pill');
+    pills.forEach(function(p) { p.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+
+    var cards = modal.querySelectorAll('.modal-partner-card');
+    cards.forEach(function(card) {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
   };
 
   window.openSectionDemo = function(key) {
