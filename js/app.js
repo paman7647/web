@@ -1024,8 +1024,16 @@
       actionText: 'Replay Climax Animation',
       actionFn: function() { closeSectionDemo(); window.location.hash = '#oneMillion'; }
     },
+    partners: {
+      num: '17 / PARTNERS',
+      title: 'Global Alliances & Strategic Donors',
+      desc: 'Institutional foundation partnerships, microfinance networks, and co-funding agreements backing Southern African operations.',
+      auditor: 'Verified Foundation Audit 2024',
+      actionText: 'View Strategic Alliances',
+      actionFn: function() { closeSectionDemo(); window.location.hash = '#partners'; }
+    },
     final: {
-      num: '17 / TAKE ACTION',
+      num: '18 / TAKE ACTION',
       title: 'Final Action Call & Newsletter Registration',
       desc: 'Interactive newsletter registration generating audited digital member cards and instant field report subscription.',
       auditor: 'Community Engagement Spec',
