@@ -568,6 +568,11 @@
     var convertedCap = Math.round(cap * currObj.rate);
 
     el('simCapDisplay').textContent = currObj.symbol + convertedCap.toLocaleString();
+
+    if (el('simLblMin')) el('simLblMin').textContent = currObj.symbol + '100K';
+    if (el('simLblMid')) el('simLblMid').textContent = currObj.symbol + '10M';
+    if (el('simLblMax')) el('simLblMax').textContent = currObj.symbol + '30M';
+
     var women = Math.round(cap / cost);
     var dependents = Math.round(women * dep);
     var school = Math.round(dependents * 0.92);

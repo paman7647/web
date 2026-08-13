@@ -12,7 +12,7 @@
     <link href="css/fonts.css" rel="stylesheet">
 
     <!-- Design System -->
-    <link rel="stylesheet" href="css/styles.css?v=20260814_v12">
+    <link rel="stylesheet" href="css/styles.css?v=20260814_v13">
 
     <meta property="og:title" content="MicroLoan Foundation — Women's Empowerment">
     <meta property="og:description" content="Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
@@ -564,9 +564,9 @@
                 <button class="curr-pill" onclick="setCurrency(this, 'EUR')">EUR (€)</button>
             </div>
             <p class="caption mb-md">CAPITAL INPUT</p>
-            <input type="range" id="simSlider" min="10000" max="1000000" step="10000" value="100000" oninput="updateSimulator()">
+            <input type="range" id="simSlider" min="100000" max="30000000" step="100000" value="3000000" oninput="updateSimulator()">
             <div style="display:flex;justify-content:space-between;margin-top:0.3rem">
-                <span class="caption">$10K</span><span class="caption">$500K</span><span class="caption">$1M</span>
+                <span class="caption" id="simLblMin">$100K</span><span class="caption" id="simLblMid">$10M</span><span class="caption" id="simLblMax">$30M</span>
             </div>
             <div style="font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.5rem);color:var(--earth);margin-top:var(--sp-lg)" id="simCapDisplay">$100,000</div>
 
@@ -1368,9 +1368,9 @@
 <script src="js/vendor/three.min.js" defer></script>
 
 <!-- Application -->
-<script src="js/app.js?v=20260814_v12" defer></script>
-<script src="js/scene.js?v=20260814_v12" defer></script>
-<script src="js/animations.js?v=20260814_v12" defer></script>
+<script src="js/app.js?v=20260814_v13" defer></script>
+<script src="js/scene.js?v=20260814_v13" defer></script>
+<script src="js/animations.js?v=20260814_v13" defer></script>
 
 <!-- Boot -->
 <script>
