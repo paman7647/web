@@ -219,6 +219,13 @@
       end: '+=800',
       pin: isDesktop,
       scrub: 0.5,
+      onLeaveBack: () => {
+        if (step1) step1.style.opacity = '0';
+        if (step2) step2.style.opacity = '0';
+      },
+      onEnter: () => {
+        if (step1) step1.style.opacity = '1';
+      },
       onUpdate: (self) => {
         const p = self.progress;
 

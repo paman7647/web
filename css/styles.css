@@ -714,7 +714,8 @@ input[type=number]{
 .blueprint.visible{display:block}
 
 /* ── ONE MILLION ──────────────────────────────────────────── */
-.million-wrap{min-height:100vh;position:relative}
+#riskMonitor, #scalability { position:relative; z-index:10; background:var(--cream); }
+.million-wrap{min-height:100vh;position:relative;overflow:hidden !important;z-index:1;}
 .million-sticky{
   height:100vh;
   display:flex;flex-direction:column;
