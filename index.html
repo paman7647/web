@@ -12,7 +12,7 @@
     <link href="css/fonts.css" rel="stylesheet">
 
     <!-- Design System -->
-    <link rel="stylesheet" href="css/styles.css?v=20260814_v18">
+    <link rel="stylesheet" href="css/styles.css?v=20260814_v19">
 
     <meta property="og:title" content="MicroLoan Foundation — Women's Empowerment">
     <meta property="og:description" content="Funding the next million journeys out of poverty through diversified, measurable, and scalable microfinance.">
@@ -39,7 +39,6 @@
             <a href="#humanModel" class="nav-link" style="text-decoration:none;">Our Work</a>
             <a href="#humanScale" class="nav-link" style="text-decoration:none;">Impact</a>
             <a href="#simulator" class="nav-link" style="text-decoration:none;">Simulator</a>
-            <a href="#partnership" class="nav-link" style="text-decoration:none;">Blueprint</a>
             <a href="#successStories" class="nav-link" style="text-decoration:none;">Stories</a>
             <a href="javascript:void(0)" class="nav-link" style="text-decoration:none;" onclick="openPartnersModal('all')">Partners →</a>
             <a href="#newsletter" class="nav-link" style="text-decoration:none;" onclick="scrollToNewsletter(event)">Take Action</a>
@@ -57,7 +56,6 @@
     <a href="#humanScale" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Impact</a>
     <a href="#fundingEngine" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Engine</a>
     <a href="#simulator" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Simulator</a>
-    <a href="#partnership" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Blueprint</a>
     <a href="#successStories" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="this.parentElement.classList.remove('active')">Stories</a>
     <a href="javascript:void(0)" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="openPartnersModal('all'); this.parentElement.classList.remove('active');">Partners →</a>
     <a href="#newsletter" class="nav-link" style="font-size:1.3rem;color:var(--ink);" onclick="scrollToNewsletter(event); this.parentElement.classList.remove('active');">Take Action</a>
@@ -606,54 +604,6 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
-     13 — CORPORATE PARTNERSHIP
-     ═══════════════════════════════════════════════════════════ -->
-<section class="sec-pad container lazy-section" id="partnership" aria-label="Corporate partnership">
-    <div class="sec-head">
-        <span class="sec-num">13 / PARTNERSHIP</span>
-        <span class="tag tag-illustrative">ENGAGEMENT MODEL</span>
-    </div>
-    <h2 class="mb-xl reveal">PARTNERSHIP,<br>NOT SPONSORSHIP.</h2>
-
-    <div class="grid">
-        <div class="col-6 reveal">
-            <select class="select-styled" id="partnerObjective">
-                <option value="SDG 5: Gender Equality">ESG: SDG 5 — Gender Equality & Empowerment</option>
-                <option value="SDG 1: Eradicating Poverty">ESG: SDG 1 — Eradicating Poverty</option>
-                <option value="SDG 8: Decent Work">ESG: SDG 8 — Decent Work & Economic Growth</option>
-            </select>
-            <select class="select-styled" id="partnerCountry">
-                <option value="Malawi">Target Region: Malawi (Agriculture Focus)</option>
-                <option value="Zambia">Target Region: Zambia (Retail Growth)</option>
-                <option value="Zimbabwe">Target Region: Zimbabwe (Resilience)</option>
-                <option value="Pan-African">Target Region: Pan-African Operations</option>
-            </select>
-            <select class="select-styled" id="partnerCommitment">
-                <option value="$50,000 / Year">$50,000 / Year (1,000 Women)</option>
-                <option value="$150,000 / Year">$150,000 / Year (3,000 Women)</option>
-                <option value="$500,000 / Year">$500,000 / Year — Strategic Anchor</option>
-            </select>
-            <button class="btn btn-fill mt-md" onclick="generateBlueprint()">Generate Partnership Blueprint</button>
-        </div>
-        <div class="col-6 reveal">
-            <div class="blueprint" id="blueprintDoc">
-                <p class="caption" style="text-align:center;margin-bottom:var(--sp-lg)">STRATEGIC PARTNERSHIP BLUEPRINT</p>
-                <h4 style="text-align:center;margin-bottom:var(--sp-lg)" id="bpTitle">—</h4>
-                <p class="body-sm mb-lg" id="bpDesc">—</p>
-                <hr class="rule rule-sm">
-                <div style="display:flex;justify-content:space-between">
-                    <span class="caption">COMMITMENT</span>
-                    <span class="mono" style="font-size:0.8125rem;font-weight:700" id="bpCommit">—</span>
-                </div>
-                <hr class="rule rule-sm">
-                <p class="body-sm">Includes quarterly SDG impact reporting, employee engagement programmes, and full client audit verification.</p>
-                <span class="tag tag-illustrative mt-lg" style="display:inline-flex">GENERATED ENGAGEMENT MODEL</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
      14 — RISK & RESILIENCE
      ═══════════════════════════════════════════════════════════ -->
 <section class="sec-pad container lazy-section" id="riskMonitor" aria-label="Risk and resilience">
@@ -705,33 +655,6 @@
             <p class="body-sm mb-md">New institutional grants may increase restricted funding proportion.</p>
             <p class="caption">MITIGATION: Prioritise unrestricted sources (HNW, digital).</p>
         </div>
-    </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     15 — OPERATIONAL SCALABILITY
-     ═══════════════════════════════════════════════════════════ -->
-<section class="sec-pad container lazy-section" id="scalability" aria-label="Operational scalability">
-    <div class="sec-head">
-        <span class="sec-num">15 / SCALE</span>
-    </div>
-    <h2 class="mb-lg reveal">CAN THE<br>ORGANISATION SCALE?</h2>
-    <p class="body-sm mb-xl reveal" style="max-width:500px">Funding growth must be matched by operational capacity. The $30M ambition requires coordinated expansion across people, systems, and field infrastructure.</p>
-
-    <div class="scale-flow reveal">
-        <div class="scale-node" style="border-color:var(--earth)">FUNDING</div>
-        <span class="scale-arrow">→</span>
-        <div class="scale-node" style="border-color:var(--indigo)">PEOPLE</div>
-        <span class="scale-arrow">→</span>
-        <div class="scale-node" style="border-color:var(--canopy)">LOAN OFFICERS</div>
-        <span class="scale-arrow">→</span>
-        <div class="scale-node" style="border-color:var(--gold)">DIGITAL SYSTEMS</div>
-        <span class="scale-arrow">→</span>
-        <div class="scale-node" style="border-color:var(--stone)">TRAINING</div>
-        <span class="scale-arrow">→</span>
-        <div class="scale-node" style="border-color:var(--canopy)">COMMUNITIES</div>
-        <span class="scale-arrow">→</span>
-        <div class="scale-node" style="border-color:var(--earth);font-weight:700">WOMEN REACHED</div>
     </div>
 </section>
 
@@ -1401,9 +1324,9 @@
 <script src="js/vendor/three.min.js" defer></script>
 
 <!-- Application -->
-<script src="js/app.js?v=20260814_v18" defer></script>
-<script src="js/scene.js?v=20260814_v18" defer></script>
-<script src="js/animations.js?v=20260814_v18" defer></script>
+<script src="js/app.js?v=20260814_v19" defer></script>
+<script src="js/scene.js?v=20260814_v19" defer></script>
+<script src="js/animations.js?v=20260814_v19" defer></script>
 
 <!-- Boot -->
 <script>
