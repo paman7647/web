@@ -606,8 +606,9 @@
 
     var finSection = el('auditedFinancialStatements');
     if (finSection) {
-      if (cat === 'all' || cat === 'financial') {
+      if (cat === 'financial') {
         finSection.style.display = 'block';
+        finSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
         finSection.style.display = 'none';
       }
