@@ -592,10 +592,10 @@
     document.querySelectorAll('.risk-filter-pill').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
 
-    var cards = document.querySelectorAll('#riskMonitor .col-4');
+    var cards = document.querySelectorAll('#riskMonitor .risk-card');
     cards.forEach(function(card) {
-      var tag = card.querySelector('.tag');
-      var text = (tag ? tag.textContent : '') + ' ' + card.textContent;
+      var level = card.querySelector('.risk-level');
+      var text = (level ? level.textContent : '') + ' ' + card.textContent;
       if (cat === 'all' || text.toLowerCase().includes(cat.toLowerCase())) {
         card.style.display = 'block';
         card.style.opacity = '1';
@@ -603,6 +603,15 @@
         card.style.display = 'none';
       }
     });
+
+    var finSection = el('auditedFinancialStatements');
+    if (finSection) {
+      if (cat === 'all' || cat === 'financial') {
+        finSection.style.display = 'block';
+      } else {
+        finSection.style.display = 'none';
+      }
+    }
   };
 
   /* ── FOLLOW THE MONEY ─────────────────────────────────────── */
